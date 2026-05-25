@@ -1,0 +1,837 @@
+export type Locale = "ru" | "kz" | "en";
+
+export const LOCALES: Locale[] = ["ru", "kz", "en"];
+
+export const LOCALE_LABEL: Record<Locale, string> = {
+  ru: "RU",
+  kz: "KZ",
+  en: "EN",
+};
+
+export const PHONE = "+7 708 938 08 00";
+export const PHONE_RAW = "77089380800";
+export const TEL = "+77089380800";
+export const WA_BASE = `https://wa.me/${PHONE_RAW}`;
+
+export const wa = (text: string) =>
+  `${WA_BASE}?text=${encodeURIComponent(text)}`;
+
+type Dict = {
+  brand: string;
+  tagline: string;
+  nav: { home: string; fleet: string; services: string; contact: string };
+  cta: { book: string; bookMsg: string; whatsapp: string; call: string; viewTariffs: string; discuss: string };
+  hero: {
+    eyebrow: string;
+    title1: string;
+    title2: string;
+    subtitle: string;
+    badge1: string;
+    badge2: string;
+    badge3: string;
+    badge4: string;
+    badge5: string;
+    badge6: string;
+    scroll: string;
+  };
+  headlights: { eyebrow: string; title: string; sub: string };
+  who: {
+    eyebrow: string;
+    title: string;
+    p1: string;
+    p2: string;
+    hint: string;
+  };
+  perks: {
+    title: string;
+    items: { t: string; d: string }[];
+  };
+  tariffs: {
+    eyebrow: string;
+    title: string;
+    note: string;
+    fromLabel: string;
+    perHour: string;
+    perDay: string;
+    perRide: string;
+    onRequest: string;
+    individual: string;
+    book: string;
+    items: { name: string; price: string; unit?: string; desc: string; waText: string }[];
+  };
+  interior: { eyebrow: string; title: string; sub: string };
+  marquee: string[];
+  airport: { eyebrow: string; title: string; sub: string };
+  reviews: { eyebrow: string; title: string; sub: string; items: { name: string; role: string; text: string }[] };
+  booking: {
+    eyebrow: string;
+    title: string;
+    sub: string;
+    dateLabel: string;
+    pickDate: string;
+    timeLabel: string;
+    serviceLabel: string;
+    services: string[];
+    nameLabel: string;
+    namePh: string;
+    phoneLabel: string;
+    phonePh: string;
+    routeLabel: string;
+    routePh: string;
+    submit: string;
+  };
+  finalCta: { title: string; sub: string; button: string };
+  footer: { rights: string; city: string; hours: string; nav: string; address: string };
+  fleetGallery: { eyebrow: string; title: string; sub: string };
+  fleetPage: {
+    title: string;
+    sub: string;
+    specTitle: string;
+    spec: { label: string; value: string }[];
+    feature: { t: string; d: string }[];
+  };
+  servicesPage: {
+    title: string;
+    sub: string;
+    items: { name: string; price: string; desc: string; bullets: string[]; waText: string }[];
+  };
+  contactPage: {
+    title: string;
+    sub: string;
+    callLabel: string;
+    waLabel: string;
+    hoursTitle: string;
+    hoursValue: string;
+    cityTitle: string;
+    cityValue: string;
+    addressTitle: string;
+    addressValue: string;
+    manager: string;
+  };
+  langSwitch: string;
+};
+
+const ru: Dict = {
+  brand: "Private Jet KZ",
+  tagline: "Астана · VIP трансфер",
+  nav: { home: "Главная", fleet: "Автопарк", services: "Услуги", contact: "Контакты" },
+  cta: {
+    book: "Заказать в WhatsApp",
+    bookMsg: "Здравствуйте, пишу с вашего сайта, хочу заказать трансфер",
+    whatsapp: "WhatsApp",
+    call: "Позвонить",
+    viewTariffs: "Посмотреть тарифы",
+    discuss: "Обсудить индивидуально",
+  },
+  hero: {
+    eyebrow: "10 лет премиум-сервиса в Астане",
+    title1: "Private Jet",
+    title2: "Astana.",
+    subtitle:
+      "Premium-трансфер на Hyundai Staria LUXE. Встречаем гостей, делегации и первых лиц — без опозданий, без лишних слов.",
+    badge1: "10 лет на рынке",
+    badge2: "3 000+ поездок",
+    badge3: "Парк из 5 авто",
+    badge4: "Капитанские кресла",
+    badge5: "Опытные водители",
+    badge6: "24/7 на связи",
+    scroll: "Прокрутите вниз",
+  },
+  headlights: {
+    eyebrow: "Включаем фары",
+    title: "Подача — точно в минуту",
+    sub: "Без звонков «я уже еду». Авто стоит у входа за 5 минут до согласованного времени.",
+  },
+  who: {
+    eyebrow: "О нас",
+    title: "VIP-трансфер с собственным автопарком",
+    p1: "Private Jet KZ — это 5 одинаковых Hyundai Staria LUXE и команда водителей, которые ценят ваше время. Не диспетчерская, не такси — собственный автопарк с единым стандартом.",
+    p2: "Тихий салон, чистота перед каждым выездом, капитанские кожаные кресла с оттоманками, тёплая подсветка. Вы получаете один и тот же уровень сервиса — какая бы машина ни приехала.",
+    hint: "Откройте дверь — заглянем внутрь",
+  },
+  perks: {
+    title: "Почему нас выбирают?",
+    items: [
+      { t: "Свой флот", d: "5 одинаковых Staria LUXE — без подмен «по ситуации»" },
+      { t: "Единый стандарт", d: "Один уровень сервиса в каждой машине" },
+      { t: "Тишина в салоне", d: "Шумоизоляция и капитанские кресла с оттоманками" },
+      { t: "Подача вовремя", d: "Минута в минуту, никаких отговорок" },
+      { t: "Помощь с багажом", d: "Вас встретит водитель в презентабельном виде с табличкой в руках" },
+      { t: "Конфиденциальность", d: "Тонировка, шторки на окнах" },
+    ],
+  },
+  tariffs: {
+    eyebrow: "Тарифы",
+    title: "Прозрачные цены — никаких сюрпризов",
+    note: "Цены указаны от. Итоговая стоимость зависит от маршрута, времени подачи и продолжительности.",
+    fromLabel: "от",
+    perHour: "₸ / час",
+    perDay: "₸ / день",
+    perRide: "₸ / поездка",
+    onRequest: "По запросу",
+    individual: "Индивидуально",
+    book: "Заказать",
+    items: [
+      {
+        name: "VIP трансфер",
+        price: "25 000",
+        unit: "₸ / поездка",
+        desc: "Из/в аэропорт, по городу, на встречу. Водитель встретит с табличкой и поможет с багажом.",
+        waText: "Здравствуйте, хочу заказать VIP трансфер по Астане.",
+      },
+      {
+        name: "Аренда по часам",
+        price: "15 000",
+        unit: "₸ / час",
+        desc: "Машина и водитель в вашем распоряжении. Минимум 3 часа, маршрут — любой.",
+        waText: "Здравствуйте, хочу арендовать Staria по часам.",
+      },
+      {
+        name: "День",
+        price: "150 000",
+        unit: "₸ / день",
+        desc: "12 часов, неограниченные поездки. Идеально для насыщенного рабочего дня.",
+        waText: "Здравствуйте, хочу заказать Staria на полный день.",
+      },
+      {
+        name: "Междугородние поездки",
+        price: "200",
+        unit: "₸ / км",
+        desc: "Астана — Боровое, Караганда, Кокшетау и любые направления. Рассчитываем индивидуально.",
+        waText: "Здравствуйте, нужен межгородской трансфер на Staria.",
+      },
+      {
+        name: "Встреча делегаций",
+        price: "Индивидуально",
+        unit: "",
+        desc: "От 2 машин и больше. Программа встречи, сопровождение, тайминг — под вашу задачу.",
+        waText: "Здравствуйте, нужна встреча делегации в Астане.",
+      },
+    ],
+  },
+  interior: {
+    eyebrow: "Капитанские кресла с оттоманками",
+    title: "Здесь работают, отдыхают, обсуждают сделки",
+    sub: "Кожа, тёплая подсветка, тишина. Бутылка воды — уже в держателе.",
+  },
+  marquee: [
+    "10 ЛЕТ НА РЫНКЕ",
+    "3000+ ПОЕЗДОК",
+    "ПАРК ИЗ 5 АВТО",
+    "КАПИТАНСКИЕ КРЕСЛА",
+    "ОПЫТНЫЕ ВОДИТЕЛИ",
+    "24/7 НА СВЯЗИ",
+  ],
+  airport: {
+    eyebrow: "В аэропорту",
+    title: "Встретим у выхода с табличкой",
+    sub: "Астана (NQZ). Подача за 30 минут до прилёта, помощь с багажом, тёплый салон.",
+  },
+  reviews: {
+    eyebrow: "Отзывы",
+    title: "Что говорят клиенты",
+    sub: "Постоянные гости, делегации и съёмочные группы — несколько историй из 10 лет работы.",
+    items: [
+      { name: "Айгерим Сагатова", role: "Продюсер · съёмки в Боровом", text: "Заказывали Staria на 3 дня в Боровое со съёмочной группой. Водитель Ербол приехал минута в минуту, помог с оборудованием, дорогой — тишина, можно было работать в ноутбуке. По возвращении машину подали к самому подъезду отеля. Уровень — как у частного джета, только на земле." },
+      { name: "Дмитрий Власов", role: "Бизнес-поездка Астана — Омск", text: "Нужно было доехать до Омска без пересадок и нервов. Согласовали маршрут в WhatsApp за 10 минут. Чистый салон, две остановки в пути по моему запросу. Обратно — та же машина, тот же водитель. Большая редкость в Казахстане." },
+      { name: "Алихан Бектуров", role: "Постоянный клиент · Алматы → Астана", text: "Прилетаю в Астану 2-3 раза в месяц, всегда заказываю Private Jet KZ. Машина уже стоит у выхода NQZ с табличкой, бутылка воды в держателе, маршрут в офис согласован заранее. За 2 года — ни одного опоздания." },
+      { name: "Олег Краснов", role: "Встреча делегации", text: "Принимали партнёров из ОАЭ — нужны были 3 одинаковые машины. Получили ровно то, что обещали: 3 чёрные Staria LUXE, вежливые водители, координатор на связи. Гости были в восторге от салона." },
+      { name: "Жанна Турлыбекова", role: "Деловой день в Астане", text: "Заказала на полный день: 4 встречи, обед, ужин. Водитель Санжар знал город идеально, между встречами в машине было удобно работать и созваниваться. Ни одной задержки. Оплата прозрачная, без сюрпризов." },
+      { name: "Тимур Ахметов", role: "Свадебный кортеж · Астана", text: "Брал две Staria на свадьбу для родителей и почётных гостей. Машины подъехали украшенные по нашему запросу, водители вежливые, помогли пожилым гостям сесть. Фото на фоне авто — просто огонь. Спасибо команде!" },
+    ],
+  },
+  booking: {
+    eyebrow: "Бронь онлайн",
+    title: "Забронируйте Трансфер за 30 секунд",
+    sub: "Выберите дату и услугу — мы подтвердим заявку в WhatsApp в течение нескольких минут.",
+    dateLabel: "Дата подачи",
+    pickDate: "Выберите дату",
+    timeLabel: "Время подачи",
+    serviceLabel: "Услуга",
+    services: ["VIP трансфер", "Аренда по часам", "Полный день", "Межгород", "Встреча делегации"],
+    nameLabel: "Ваше имя",
+    namePh: "Имя",
+    phoneLabel: "Телефон",
+    phonePh: "+7 ___ ___ __ __",
+    routeLabel: "Маршрут / комментарий",
+    routePh: "Например: NQZ — отель Ritz Carlton",
+    submit: "Отправить в WhatsApp",
+  },
+  finalCta: {
+    title: "Закажите трансфер за один звонок",
+    sub: "Менеджер на связи в WhatsApp. Ответ в течение нескольких минут.",
+    button: "Написать в WhatsApp",
+  },
+  footer: {
+    rights: "© Private Jet KZ — все права защищены",
+    city: "г. Астана, Казахстан",
+    hours: "24/7",
+    nav: "Навигация",
+    address: "ул. Толе Би 25/1",
+  },
+  fleetGallery: {
+    eyebrow: "Наш автопарк",
+    title: "Реальные авто — реальные поездки",
+    sub: "Снято на наших выездах. 5 одинаковых Hyundai Staria LUXE — всегда в чистоте и готовности.",
+  },
+  fleetPage: {
+    title: "Hyundai Staria LUXE",
+    sub: "Топовая комплектация. Все 5 машин — одинаковые, ухоженные, с капитанскими креслами.",
+    specTitle: "Опции трансфера",
+    spec: [
+      { label: "Мест для пассажиров", value: "до 6" },
+      { label: "Капитанские кресла с оттоманками", value: "Кожа, подогрев" },
+      { label: "Люк", value: "Панорамный · 2 ряда" },
+      { label: "Тонированные окна со шторами", value: "Задние стёкла" },
+      { label: "Багажник", value: "До 6 чемоданов" },
+      { label: "Климат", value: "Многозонный" },
+      { label: "Wi-Fi / Зарядки", value: "USB-C, Type-A" },
+      { label: "Складные сиденья", value: "3-й ряд" },
+      { label: "Усиленная печка", value: "Быстрый прогрев" },
+      { label: "Бутылка воды", value: "В каждой поездке" },
+    ],
+    feature: [
+      { t: "Тонированные окна со шторами", d: "Конфиденциальность во время поездки" },
+      { t: "Автоматические двери", d: "Удобный вход для VIP-гостей" },
+      { t: "Минимальный шум", d: "Шумоизоляция топ-уровня" },
+      { t: "Чистота", d: "Полная мойка перед каждым выездом" },
+    ],
+  },
+  servicesPage: {
+    title: "Услуги",
+    sub: "От часовой аренды до встречи делегаций — мы закрываем весь спектр VIP-трансфера в Астане.",
+    items: [
+      {
+        name: "VIP трансфер по городу",
+        price: "от 25 000 ₸",
+        desc: "Аэропорт, деловая встреча, ресторан, мероприятие.",
+        bullets: ["Подача за 5 минут до времени", "Водитель в презентабельном виде", "Помощь с багажом", "Бутылка воды в салоне"],
+        waText: "Здравствуйте, нужен VIP трансфер по Астане.",
+      },
+      {
+        name: "Аренда по часам",
+        price: "от 15 000 ₸ / час",
+        desc: "Машина и водитель в вашем распоряжении. Минимум 3 часа.",
+        bullets: ["Любой маршрут по городу", "Ожидание включено", "Несколько остановок", "Тишина в салоне"],
+        waText: "Здравствуйте, хочу почасовую аренду Staria.",
+      },
+      {
+        name: "Полный день",
+        price: "от 150 000 ₸ / 12 часов",
+        desc: "Когда у вас день встреч и переездов.",
+        bullets: ["12 часов работы", "Без лимита по километражу в городе", "Идеально для насыщенных дней"],
+        waText: "Здравствуйте, хочу заказать Staria на день.",
+      },
+      {
+        name: "Междугородние поездки",
+        price: "от 200 ₸/км",
+        desc: "Астана — Боровое, Караганда, Кокшетау, Павлодар и др.",
+        bullets: ["Расчёт по маршруту", "Опытный водитель", "Возможны мульти-остановки"],
+        waText: "Здравствуйте, нужен межгородской трансфер на Staria.",
+      },
+      {
+        name: "Встреча делегаций",
+        price: "Индивидуально",
+        desc: "От 2 машин. Программа встречи, сопровождение, тайминг.",
+        bullets: ["Координатор на связи", "Единый стандарт сервиса", "Безопасность и пунктуальность"],
+        waText: "Здравствуйте, обсудим встречу делегации.",
+      },
+    ],
+  },
+  contactPage: {
+    title: "Связаться с нами",
+    sub: "Менеджер на связи в WhatsApp 24/7. Ответ в течение нескольких минут.",
+    callLabel: "Позвонить",
+    waLabel: "Написать в WhatsApp",
+    hoursTitle: "Часы работы",
+    hoursValue: "Круглосуточно, 7 дней в неделю",
+    cityTitle: "Город",
+    cityValue: "Астана, Казахстан",
+    addressTitle: "Адрес",
+    addressValue: "ул. Толе би, 25/1, г. Астана",
+    manager: "Санат · менеджер",
+  },
+  langSwitch: "Язык",
+};
+
+const kz: Dict = {
+  brand: "Private Jet KZ",
+  tagline: "Астана · VIP трансфер",
+  nav: { home: "Басты бет", fleet: "Автопарк", services: "Қызметтер", contact: "Байланыс" },
+  cta: {
+    book: "WhatsApp арқылы тапсырыс",
+    bookMsg: "Сәлем, сіздің сайтыңыздан жазып тұрмын, трансфер тапсырыс бергім келеді",
+    whatsapp: "WhatsApp",
+    call: "Қоңырау шалу",
+    viewTariffs: "Тарифтерді көру",
+    discuss: "Жеке талқылау",
+  },
+  hero: {
+    eyebrow: "Астанада 10 жыл премиум қызмет",
+    title1: "Private Jet",
+    title2: "Astana.",
+    subtitle:
+      "Hyundai Staria LUXE-те Premium трансфер. Қонақтарды, делегацияларды және бірінші тұлғаларды кешіктірмей қарсы аламыз.",
+    badge1: "10 жыл нарықта",
+    badge2: "3 000+ сапар",
+    badge3: "5 көліктен парк",
+    badge4: "Капитан орындықтар",
+    badge5: "Тәжірибелі жүргізушілер",
+    badge6: "24/7 байланыста",
+    scroll: "Төмен айналдырыңыз",
+  },
+  headlights: {
+    eyebrow: "Шамдарды қосамыз",
+    title: "Көлік дәл уақытында",
+    sub: "«Мен жолдамын» қоңыраулары болмайды. Автокөлік келісілген уақыттан 5 минут бұрын кіреберісте тұрады.",
+  },
+  who: {
+    eyebrow: "Біз туралы",
+    title: "Өз автопаркімен VIP-трансфер",
+    p1: "Private Jet KZ — бұл 5 бірдей Hyundai Staria LUXE және сіздің уақытыңызды бағалайтын жүргізушілер тобы. Диспетчерлік емес, такси емес — біртұтас стандартпен өз автопарк.",
+    p2: "Тыныш салон, әр шығу алдында тазалық, былғары капитан орындықтары, жылы жарық. Қандай көлік келсе де — бірдей сервис деңгейін аласыз.",
+    hint: "Есікті ашыңыз — ішіне қарайық",
+  },
+  perks: {
+    title: "Бізді неге таңдайды?",
+    items: [
+      { t: "Өз флоты", d: "5 бірдей Staria LUXE — алмастыру жоқ" },
+      { t: "Бірыңғай стандарт", d: "Әр көлікте бірдей сервис деңгейі" },
+      { t: "Салондағы тыныштық", d: "Шу оқшаулағыш және капитан орындықтар" },
+      { t: "Уақытында келу", d: "Минут минутке, ешқандай сылтау жоқ" },
+      { t: "Жүкке көмек", d: "Жүргізуші презентабельді түрде тақтайшамен қарсы алады" },
+      { t: "Құпиялылық", d: "Тонировка, терезедегі шторлар" },
+    ],
+  },
+  tariffs: {
+    eyebrow: "Тарифтер",
+    title: "Ашық бағалар — ешқандай тосын сый жоқ",
+    note: "Бағалар «бастап» көрсетілген. Соңғы құн маршрутқа, уақытқа және ұзақтығына байланысты.",
+    fromLabel: "бастап",
+    perHour: "₸ / сағат",
+    perDay: "₸ / күн",
+    perRide: "₸ / сапар",
+    onRequest: "Сұраныс бойынша",
+    individual: "Жеке",
+    book: "Тапсырыс беру",
+    items: [
+      {
+        name: "VIP трансфер",
+        price: "25 000",
+        unit: "₸ / сапар",
+        desc: "Әуежайға/әуежайдан, қала бойынша, кездесуге. Жүргізуші тақтайшамен қарсы алады.",
+        waText: "Сәлем, Астана бойынша VIP трансфер тапсырыс бергім келеді.",
+      },
+      {
+        name: "Сағаттық жалдау",
+        price: "15 000",
+        unit: "₸ / сағат",
+        desc: "Көлік пен жүргізуші сіздің қарамағыңызда. Кемінде 3 сағат.",
+        waText: "Сәлем, Staria-ны сағатпен жалдағым келеді.",
+      },
+      {
+        name: "Күн",
+        price: "150 000",
+        unit: "₸ / күн",
+        desc: "12 сағат, шектеусіз сапарлар. Қарбалас күнге өте қолайлы.",
+        waText: "Сәлем, Staria-ны бүкіл күнге тапсырыс бергім келеді.",
+      },
+      {
+        name: "Қалааралық сапарлар",
+        price: "200",
+        unit: "₸ / км",
+        desc: "Астана — Бурабай, Қарағанды, Көкшетау және басқа бағыттар.",
+        waText: "Сәлем, Staria-да қалааралық трансфер керек.",
+      },
+      {
+        name: "Делегацияларды қарсы алу",
+        price: "Жеке",
+        unit: "",
+        desc: "2 көліктен бастап. Бағдарлама, ілесу, тайминг — сіздің тапсырмаңыз бойынша.",
+        waText: "Сәлем, Астанада делегацияны қарсы алу керек.",
+      },
+    ],
+  },
+  interior: {
+    eyebrow: "Капитан орындықтары оттоманкамен",
+    title: "Мұнда жұмыс істейді, демалады, мәмілелерді талқылайды",
+    sub: "Былғары, жылы жарық, тыныштық. Су бөтелкесі — қазір ұстағышта.",
+  },
+  marquee: [
+    "10 ЖЫЛ НАРЫҚТА",
+    "3000+ САПАР",
+    "5 КӨЛІКТЕН ПАРК",
+    "КАПИТАН ОРЫНДЫҚТАР",
+    "ТӘЖІРИБЕЛІ ЖҮРГІЗУШІЛЕР",
+    "24/7 БАЙЛАНЫСТА",
+  ],
+  airport: {
+    eyebrow: "Әуежайда",
+    title: "Шығу есігінде тақтайшамен қарсы аламыз",
+    sub: "Астана (NQZ). Ұшу алдында 30 минут бұрын келу, жүкке көмек, жылы салон.",
+  },
+  reviews: {
+    eyebrow: "Пікірлер",
+    title: "Клиенттер не дейді",
+    sub: "Тұрақты қонақтар, делегациялар және түсірілім топтары — 10 жылдық тәжірибеден бірнеше әңгіме.",
+    items: [
+      { name: "Айгерім Сағатова", role: "Продюсер · Бурабайдағы түсірілім", text: "Түсірілім тобымен Бурабайға 3 күнге Staria тапсырыс бердік. Жүргізуші Ербол минутына дәл келді, жабдықпен көмектесті. Жолда — тыныштық, ноутбукта жұмыс істеуге болады. Қайтарда көлік қонақ үйдің кіреберісіне дейін келді." },
+      { name: "Дмитрий Власов", role: "Іскерлік сапар Астана — Омбы", text: "Омбыға ауыстырусыз және жүйкесіз жетуім керек еді. WhatsApp-та маршрутты 10 минутта келістік. Таза салон, жолда екі тоқтау. Қайтарда — сол көлік, сол жүргізуші." },
+      { name: "Алихан Бектұров", role: "Тұрақты клиент · Алматы → Астана", text: "Айына 2-3 рет Астанаға ұшамын, әрқашан Private Jet KZ-ге тапсырыс беремін. Көлік NQZ шығу есігінде тақтайшамен тұрады, су бөтелкесі дайын. 2 жылда — бір де кешіккен жоқ." },
+      { name: "Олег Краснов", role: "Делегацияны қарсы алу", text: "БАӘ серіктестерін қарсы алдық — 3 бірдей көлік керек болды. Уәде еткендей: 3 қара Staria LUXE, мейірімді жүргізушілер, координатор байланыста. Қонақтар салонға таңқалды." },
+      { name: "Жанна Тұрлыбекова", role: "Астанадағы іскерлік күн", text: "Толық күнге тапсырыс бердім: 4 кездесу, түскі ас, кешкі ас. Жүргізуші Санжар қаланы тамаша біледі, кездесулер арасында машинада жұмыс істеу ыңғайлы болды. Бір де кідіріс жоқ." },
+      { name: "Тимұр Ахметов", role: "Үйлену кортежі · Астана", text: "Ата-анам мен құрметті қонақтарға үйлену тойына 2 Staria алдым. Көліктер бізідің сұранысымыз бойынша безендірілген, жүргізушілер сыпайы, қарт қонақтарға отыруға көмектесті. Көліктің фонындағы фотолар тамаша!" },
+    ],
+  },
+  booking: {
+    eyebrow: "Онлайн брондау",
+    title: "Трансферді 30 секундта брондаңыз",
+    sub: "Күн мен қызметті таңдаңыз — өтінімді WhatsApp арқылы бірнеше минут ішінде растаймыз.",
+    dateLabel: "Қажетті күн",
+    pickDate: "Күнді таңдаңыз",
+    timeLabel: "Уақыт",
+    serviceLabel: "Қызмет",
+    services: ["VIP трансфер", "Сағаттық жалдау", "Толық күн", "Қалааралық", "Делегацияны қарсы алу"],
+    nameLabel: "Атыңыз",
+    namePh: "Аты-жөні",
+    phoneLabel: "Телефон",
+    phonePh: "+7 ___ ___ __ __",
+    routeLabel: "Маршрут / түсініктеме",
+    routePh: "Мысалы: NQZ — Ritz Carlton қонақ үйі",
+    submit: "WhatsApp-қа жіберу",
+  },
+  finalCta: {
+    title: "Бір қоңыраумен Трансфер шақырыңыз",
+    sub: "Менеджер WhatsApp-та байланыста. Бірнеше минут ішінде жауап.",
+    button: "WhatsApp-қа жазу",
+  },
+  footer: {
+    rights: "© Private Jet KZ — барлық құқықтар қорғалған",
+    city: "Астана қ., Қазақстан",
+    hours: "24/7",
+    nav: "Навигация",
+    address: "Төле Би к-сі, 25/1",
+  },
+  fleetGallery: {
+    eyebrow: "Біздің автопарк",
+    title: "Нақты көліктер — нақты сапарлар",
+    sub: "Біздің жұмыс сапарларымыздан түсірілген. 5 бірдей Hyundai Staria LUXE — әрдайым таза және дайын.",
+  },
+  fleetPage: {
+    title: "Hyundai Staria LUXE",
+    sub: "Топ комплектация. 5 көліктің барлығы — бірдей, ұқыпты, капитан орындықтармен.",
+    specTitle: "Трансфер опциялары",
+    spec: [
+      { label: "Жолаушы орындары", value: "6 дейін" },
+      { label: "Атаманмен капитан орындықтар", value: "Былғары, жылыту" },
+      { label: "Люк", value: "Панорамды · 2 қатар" },
+      { label: "Шторалы тонировка әйнектер", value: "Артқы шынылар" },
+      { label: "Багаж", value: "6 чемоданға дейін" },
+      { label: "Климат", value: "Көп аймақты" },
+      { label: "Wi-Fi / Зарядтау", value: "USB-C, Type-A" },
+      { label: "Бүктелетін орындықтар", value: "3-ші қатар" },
+      { label: "Күшейтілген жылытқыш", value: "Жылдам жылыту" },
+      { label: "Су бөтелкесі", value: "Әр сапарда" },
+    ],
+    feature: [
+      { t: "Шторалы тонировка әйнектер", d: "Сапар кезіндегі құпиялылық" },
+      { t: "Автоматты есіктер", d: "VIP қонақтарға қолайлы кіру" },
+      { t: "Минималды шу", d: "Топ деңгейлі шу оқшаулағыш" },
+      { t: "Тазалық", d: "Әр шығу алдында толық жуу" },
+    ],
+  },
+  servicesPage: {
+    title: "Қызметтер",
+    sub: "Сағаттық жалдаудан делегацияларды қарсы алуға дейін — Астанадағы VIP трансфердің барлық спектрі.",
+    items: [
+      {
+        name: "Қала бойынша VIP трансфер",
+        price: "25 000 ₸ бастап",
+        desc: "Әуежай, кездесу, мейрамхана, іс-шара.",
+        bullets: ["Уақытқа дейін 5 минут бұрын келу", "Презентабельді жүргізуші", "Жүкке көмек", "Салонда су бөтелкесі"],
+        waText: "Сәлем, Астана бойынша VIP трансфер керек.",
+      },
+      {
+        name: "Сағаттық жалдау",
+        price: "15 000 ₸ / сағат бастап",
+        desc: "Көлік пен жүргізуші сіздің қарамағыңызда. Кемінде 3 сағат.",
+        bullets: ["Қала ішіндегі кез келген маршрут", "Күту кіреді", "Бірнеше тоқтау", "Салондағы тыныштық"],
+        waText: "Сәлем, Staria-ны сағатпен жалдағым келеді.",
+      },
+      {
+        name: "Толық күн",
+        price: "150 000 ₸ / 12 сағат бастап",
+        desc: "Кездесулер мен ауысулар күні үшін.",
+        bullets: ["12 сағат жұмыс", "Қаладағы шектеусіз километраж", "Қарбалас күндерге қолайлы"],
+        waText: "Сәлем, Staria-ны күнге тапсырыс бергім келеді.",
+      },
+      {
+        name: "Қалааралық сапарлар",
+        price: "200 ₸/км бастап",
+        desc: "Астана — Бурабай, Қарағанды, Көкшетау, Павлодар т.б.",
+        bullets: ["Маршрут бойынша есеп", "Тәжірибелі жүргізуші", "Көп тоқтаулар мүмкін"],
+        waText: "Сәлем, Staria-да қалааралық керек.",
+      },
+      {
+        name: "Делегацияларды қарсы алу",
+        price: "Жеке",
+        desc: "2 көліктен. Бағдарлама, ілесу, тайминг.",
+        bullets: ["Координатор байланыста", "Бірыңғай сервис стандарты", "Қауіпсіздік және ұқыптылық"],
+        waText: "Сәлем, делегацияны қарсы алуды талқылайық.",
+      },
+    ],
+  },
+  contactPage: {
+    title: "Бізбен байланыс",
+    sub: "Менеджер WhatsApp-та 24/7 байланыста. Бірнеше минут ішінде жауап.",
+    callLabel: "Қоңырау шалу",
+    waLabel: "WhatsApp-қа жазу",
+    hoursTitle: "Жұмыс уақыты",
+    hoursValue: "Тәулік бойы, аптасына 7 күн",
+    cityTitle: "Қала",
+    cityValue: "Астана, Қазақстан",
+    addressTitle: "Мекенжай",
+    addressValue: "Төле би к-сі, 25/1, Астана қ.",
+    manager: "Санат · менеджер",
+  },
+  langSwitch: "Тіл",
+};
+
+const en: Dict = {
+  brand: "Private Jet KZ",
+  tagline: "Astana · VIP transfer",
+  nav: { home: "Home", fleet: "Fleet", services: "Services", contact: "Contact" },
+  cta: {
+    book: "Book on WhatsApp",
+    bookMsg: "Hello, I'm writing from your website and would like to book a transfer",
+    whatsapp: "WhatsApp",
+    call: "Call",
+    viewTariffs: "View tariffs",
+    discuss: "Discuss in private",
+  },
+  hero: {
+    eyebrow: "10 years of premium service in Astana",
+    title1: "Private Jet",
+    title2: "Astana",
+    subtitle:
+      "Premium transfer on Hyundai Staria LUXE. We meet guests, delegations and VIPs — on time, every time, with no fuss.",
+    badge1: "10 years in market",
+    badge2: "3,000+ rides",
+    badge3: "Fleet of 5 cars",
+    badge4: "Captain seats",
+    badge5: "Experienced drivers",
+    badge6: "24/7 available",
+    scroll: "Scroll down",
+  },
+  headlights: {
+    eyebrow: "Headlights on",
+    title: "Pickup, to the minute",
+    sub: "No “I’m on my way” calls. The car is at the door 5 minutes before your scheduled time.",
+  },
+  who: {
+    eyebrow: "About us",
+    title: "VIP Transfer with Our Own Fleet",
+    p1: "Private Jet KZ is a fleet of 5 identical Hyundai Staria LUXE and a team of drivers who respect your time. Not a dispatcher, not a taxi — our own cars, one single standard.",
+    p2: "Quiet cabin, full clean before every ride, captain leather seats, warm ambient light. You get the same level of service — no matter which car shows up.",
+    hint: "Open the door — see inside",
+  },
+  perks: {
+    title: "Why clients choose us?",
+    items: [
+      { t: "Our own fleet", d: "5 identical Staria LUXE — no last-minute swaps" },
+      { t: "Single standard", d: "Same level of service in every car" },
+      { t: "Quiet cabin", d: "Sound insulation and captain seats" },
+      { t: "On time", d: "To the minute. No excuses." },
+      { t: "Help with luggage", d: "Your driver greets you in smart dress with a sign in hand" },
+      { t: "Confidentiality", d: "Tinted windows with curtains" },
+    ],
+  },
+  tariffs: {
+    eyebrow: "Tariffs",
+    title: "Transparent pricing — no surprises",
+    note: "Prices are starting from. Final cost depends on route, time and duration.",
+    fromLabel: "from",
+    perHour: "₸ / hour",
+    perDay: "₸ / day",
+    perRide: "₸ / ride",
+    onRequest: "On request",
+    individual: "Custom",
+    book: "Book",
+    items: [
+      {
+        name: "VIP transfer",
+        price: "25 000",
+        unit: "₸ / ride",
+        desc: "To/from airport, around the city, to a meeting. Driver meets you with a sign and helps with bags.",
+        waText: "Hello, I'd like to book a VIP transfer in Astana.",
+      },
+      {
+        name: "Hourly rental",
+        price: "15 000",
+        unit: "₸ / hour",
+        desc: "Car and driver at your disposal. Minimum 3 hours, any route.",
+        waText: "Hello, I'd like to rent the Staria by the hour.",
+      },
+      {
+        name: "Full day",
+        price: "150 000",
+        unit: "₸ / day",
+        desc: "12 hours, unlimited rides. Perfect for a packed work day.",
+        waText: "Hello, I'd like to book the Staria for a full day.",
+      },
+      {
+        name: "Intercity rides",
+        price: "200",
+        unit: "₸ / km",
+        desc: "Astana — Burabay, Karaganda, Kokshetau and any direction. Custom quote.",
+        waText: "Hello, I need an intercity transfer on the Staria.",
+      },
+      {
+        name: "Delegation pickup",
+        price: "Custom",
+        unit: "",
+        desc: "Two or more cars. Custom programme, escort and timing — built around your task.",
+        waText: "Hello, I need a delegation pickup in Astana.",
+      },
+    ],
+  },
+  interior: {
+    eyebrow: "Captain seats with ottomans",
+    title: "Where deals are made — between rides",
+    sub: "Leather, warm ambient light, silence. A bottle of water already in the holder.",
+  },
+  marquee: ["10 YEARS IN MARKET", "3000+ RIDES", "FLEET OF 5 CARS", "CAPTAIN SEATS", "EXPERT DRIVERS", "24/7 AVAILABLE"],
+  airport: {
+    eyebrow: "At the airport",
+    title: "We meet you at the gate with a sign",
+    sub: "Astana (NQZ). We arrive 30 minutes before landing, help with luggage, warm cabin ready.",
+  },
+  reviews: {
+    eyebrow: "Reviews",
+    title: "What our clients say",
+    sub: "Repeat guests, delegations and film crews — a few stories from 10 years on the road.",
+    items: [
+      { name: "Aigerim Sagatova", role: "Producer · Borovoye film shoot", text: "Booked a Staria for 3 days to Borovoye with the film crew. Driver Yerbol arrived to the minute, helped with the gear. Quiet cabin — I worked on the laptop the whole way. On return the car pulled right up to the hotel entrance. Felt like a private jet, just on the ground." },
+      { name: "Dmitry Vlasov", role: "Astana — Omsk business trip", text: "Needed to reach Omsk without transfers or stress. Agreed the route over WhatsApp in 10 minutes. Clean cabin, two stops on request. Same car and same driver on the way back — a rarity in Kazakhstan." },
+      { name: "Alikhan Bekturov", role: "Repeat client · Almaty → Astana", text: "I fly to Astana 2-3 times a month and always book Private Jet KZ. The car is already at the NQZ exit with a sign, water in the holder, route to the office pre-agreed. Two years — not a single delay." },
+      { name: "Oleg Krasnov", role: "Delegation pickup", text: "We hosted partners from the UAE — needed 3 identical cars. Got exactly what was promised: 3 black Staria LUXE, courteous drivers, coordinator on call. Guests were blown away by the cabin." },
+      { name: "Zhanna Turlybekova", role: "Business day in Astana", text: "Booked a full day: 4 meetings, lunch, dinner. Driver Sanzhar knew the city perfectly, the cabin was a comfortable office between meetings. Not a single delay. Pricing was transparent." },
+      { name: "Timur Akhmetov", role: "Wedding cortege · Astana", text: "Booked two Staria for my parents and honoured guests at a wedding. Cars arrived decorated to our request, drivers were polite, helped elderly guests in. Photos against the cars came out incredible. Thanks to the team!" },
+    ],
+  },
+  booking: {
+    eyebrow: "Online booking",
+    title: "Book your Transfer in 30 seconds",
+    sub: "Pick a date and service — we'll confirm on WhatsApp within minutes.",
+    dateLabel: "Pickup date",
+    pickDate: "Choose a date",
+    timeLabel: "Pickup time",
+    serviceLabel: "Service",
+    services: ["VIP transfer", "Hourly rental", "Full day", "Intercity", "Delegation pickup"],
+    nameLabel: "Your name",
+    namePh: "Name",
+    phoneLabel: "Phone",
+    phonePh: "+7 ___ ___ __ __",
+    routeLabel: "Route / notes",
+    routePh: "E.g. NQZ — Ritz Carlton hotel",
+    submit: "Send on WhatsApp",
+  },
+  finalCta: {
+    title: "One message — and your Transfer is on its way",
+    sub: "Our manager is on WhatsApp. Reply within minutes.",
+    button: "Message on WhatsApp",
+  },
+  footer: {
+    rights: "© Private Jet KZ — all rights reserved",
+    city: "Astana, Kazakhstan",
+    hours: "24/7",
+    nav: "Navigation",
+    address: "25/1 Tole Bi St",
+  },
+  fleetGallery: {
+    eyebrow: "Our fleet",
+    title: "Real cars — real rides",
+    sub: "Photographed on our actual jobs. 5 identical Hyundai Staria LUXE — always clean and ready.",
+  },
+  fleetPage: {
+    title: "Hyundai Staria LUXE",
+    sub: "Top trim. All 5 cars — identical, well-maintained, with captain seats.",
+    specTitle: "Transfer options",
+    spec: [
+      { label: "Passenger seats", value: "up to 6" },
+      { label: "Captain seats with ottomans", value: "Leather, heated" },
+      { label: "Sunroof", value: "Panoramic · 2 rows" },
+      { label: "Tinted windows with curtains", value: "Rear glass" },
+      { label: "Luggage", value: "Up to 6 cases" },
+      { label: "Climate", value: "Multi-zone" },
+      { label: "Wi-Fi / Charging", value: "USB-C, Type-A" },
+      { label: "Folding seats", value: "3rd row" },
+      { label: "Reinforced heater", value: "Fast warm-up" },
+      { label: "Water bottle", value: "Every ride" },
+    ],
+    feature: [
+      { t: "Tinted windows with curtains", d: "Privacy on the road" },
+      { t: "Automatic doors", d: "Easy entrance for VIP guests" },
+      { t: "Minimal noise", d: "Top-tier sound insulation" },
+      { t: "Full clean", d: "Detailed before every ride" },
+    ],
+  },
+  servicesPage: {
+    title: "Services",
+    sub: "From hourly rental to delegation pickups — the full range of VIP transfer in Astana.",
+    items: [
+      {
+        name: "VIP transfer in the city",
+        price: "from 25 000 ₸",
+        desc: "Airport, business meeting, restaurant, event.",
+        bullets: ["Arrives 5 minutes before time", "Driver in smart presentable dress", "Help with luggage", "Bottle of water inside"],
+        waText: "Hello, I need a VIP transfer in Astana.",
+      },
+      {
+        name: "Hourly rental",
+        price: "from 15 000 ₸ / hour",
+        desc: "Car and driver at your disposal. Minimum 3 hours.",
+        bullets: ["Any route in the city", "Waiting included", "Multiple stops", "Quiet cabin"],
+        waText: "Hello, I'd like an hourly Staria rental.",
+      },
+      {
+        name: "Full day",
+        price: "from 150 000 ₸ / 12 hours",
+        desc: "When your day is full of meetings and movement.",
+        bullets: ["12 hours of work", "Unlimited mileage in the city", "Perfect for packed days"],
+        waText: "Hello, I'd like a full-day Staria booking.",
+      },
+      {
+        name: "Intercity rides",
+        price: "from 200 ₸/km",
+        desc: "Astana — Burabay, Karaganda, Kokshetau, Pavlodar and more.",
+        bullets: ["Custom route quote", "Experienced driver", "Multi-stop available"],
+        waText: "Hello, I need an intercity ride on the Staria.",
+      },
+      {
+        name: "Delegation pickups",
+        price: "Custom",
+        desc: "Two cars and more. Programme, escort, timing.",
+        bullets: ["Coordinator on call", "Single service standard", "Safety and punctuality"],
+        waText: "Hello, let's discuss a delegation pickup.",
+      },
+    ],
+  },
+  contactPage: {
+    title: "Contact us",
+    sub: "Our manager is on WhatsApp 24/7. Reply within minutes.",
+    callLabel: "Call",
+    waLabel: "Message on WhatsApp",
+    hoursTitle: "Hours",
+    hoursValue: "24/7, every day",
+    cityTitle: "City",
+    cityValue: "Astana, Kazakhstan",
+    addressTitle: "Address",
+    addressValue: "25/1 Tole bi St, Astana",
+    manager: "Sanat · manager",
+  },
+  langSwitch: "Language",
+};
+
+export const dictionaries: Record<Locale, Dict> = { ru, kz, en };
+export type { Dict };
