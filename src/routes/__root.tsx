@@ -49,6 +49,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 const SITE_URL = "https://privatejet.kz";
 const OG_IMAGE = `${SITE_URL}/og-cover.jpg`;
 
+// Яндекс.Метрика — счётчик privatejet.kz
+const METRIKA_ID = 109432829;
+const METRIKA_SNIPPET = `(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js?id=${METRIKA_ID}","ym");ym(${METRIKA_ID},"init",{ssr:true,webvisor:true,clickmap:true,accurateTrackBounce:true,trackLinks:true});`;
+
 const JSON_LD = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -129,9 +133,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     scripts: [
       { type: "application/ld+json", children: JSON_LD },
-      // TODO: замените XXXXXXXX на ваш реальный ID счётчика Яндекс.Метрики
-      // Зарегистрируйтесь на metrika.yandex.ru → Добавить счётчик → privatejet.kz
-      // { src: "https://mc.yandex.ru/metrika/tag.js", async: true },
+      { children: METRIKA_SNIPPET },
     ],
   }),
   shellComponent: RootShell,
