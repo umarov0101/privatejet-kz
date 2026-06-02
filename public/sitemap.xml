@@ -2,48 +2,132 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+  <!-- ============ ГЛАВНАЯ ============ -->
   <url>
-    <loc>https://privatejetkz.com/</loc>
-    <lastmod>2026-05-12</lastmod>
+    <loc>https://privatejet.kz/</loc>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://privatejetkz.com/"/>
-    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://privatejetkz.com/"/>
-    <xhtml:link rel="alternate" hreflang="en"    href="https://privatejetkz.com/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://privatejetkz.com/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://privatejet.kz/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://privatejet.kz/kz"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privatejet.kz/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privatejet.kz/"/>
+  </url>
+  <url>
+    <loc>https://privatejet.kz/kz</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://privatejet.kz/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://privatejet.kz/kz"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privatejet.kz/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privatejet.kz/"/>
+  </url>
+  <url>
+    <loc>https://privatejet.kz/en</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://privatejet.kz/"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://privatejet.kz/kz"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privatejet.kz/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privatejet.kz/"/>
   </url>
 
+  <!-- ============ УСЛУГИ ============ -->
   <url>
-    <loc>https://privatejetkz.com/services</loc>
-    <lastmod>2026-05-12</lastmod>
+    <loc>https://privatejet.kz/services</loc>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://privatejetkz.com/services"/>
-    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://privatejetkz.com/services"/>
-    <xhtml:link rel="alternate" hreflang="en"    href="https://privatejetkz.com/services"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://privatejetkz.com/services"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://privatejet.kz/services"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://privatejet.kz/kz/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privatejet.kz/en/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privatejet.kz/services"/>
   </url>
-
   <url>
-    <loc>https://privatejetkz.com/fleet</loc>
-    <lastmod>2026-05-12</lastmod>
+    <loc>https://privatejet.kz/kz/services</loc>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://privatejetkz.com/fleet"/>
-    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://privatejetkz.com/fleet"/>
-    <xhtml:link rel="alternate" hreflang="en"    href="https://privatejetkz.com/fleet"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://privatejetkz.com/fleet"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://privatejet.kz/services"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://privatejet.kz/kz/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privatejet.kz/en/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privatejet.kz/services"/>
+  </url>
+  <url>
+    <loc>https://privatejet.kz/en/services</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://privatejet.kz/services"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://privatejet.kz/kz/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privatejet.kz/en/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privatejet.kz/services"/>
   </url>
 
+  <!-- ============ АВТОПАРК ============ -->
   <url>
-    <loc>https://privatejetkz.com/contact</loc>
-    <lastmod>2026-05-12</lastmod>
+    <loc>https://privatejet.kz/fleet</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://privatejet.kz/fleet"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://privatejet.kz/kz/fleet"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privatejet.kz/en/fleet"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privatejet.kz/fleet"/>
+  </url>
+  <url>
+    <loc>https://privatejet.kz/kz/fleet</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://privatejet.kz/fleet"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://privatejet.kz/kz/fleet"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privatejet.kz/en/fleet"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privatejet.kz/fleet"/>
+  </url>
+  <url>
+    <loc>https://privatejet.kz/en/fleet</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://privatejet.kz/fleet"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://privatejet.kz/kz/fleet"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privatejet.kz/en/fleet"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privatejet.kz/fleet"/>
+  </url>
+
+  <!-- ============ КОНТАКТЫ ============ -->
+  <url>
+    <loc>https://privatejet.kz/contact</loc>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ru-KZ" href="https://privatejetkz.com/contact"/>
-    <xhtml:link rel="alternate" hreflang="kk-KZ" href="https://privatejetkz.com/contact"/>
-    <xhtml:link rel="alternate" hreflang="en"    href="https://privatejetkz.com/contact"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://privatejetkz.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://privatejet.kz/contact"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://privatejet.kz/kz/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privatejet.kz/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privatejet.kz/contact"/>
+  </url>
+  <url>
+    <loc>https://privatejet.kz/kz/contact</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://privatejet.kz/contact"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://privatejet.kz/kz/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privatejet.kz/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privatejet.kz/contact"/>
+  </url>
+  <url>
+    <loc>https://privatejet.kz/en/contact</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://privatejet.kz/contact"/>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://privatejet.kz/kz/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://privatejet.kz/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://privatejet.kz/contact"/>
   </url>
 
 </urlset>

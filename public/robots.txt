@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://privatejetkz.com/sitemap.xml
+Sitemap: https://privatejet.kz/sitemap.xml

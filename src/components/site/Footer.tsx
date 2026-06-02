@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useLocale } from "@/i18n/context";
+import { withLocale } from "@/i18n/path";
 import { PHONE, TEL, wa } from "@/i18n/dictionaries";
 import logo from "@/assets/logo-opt.png";
 import { Instagram, Youtube } from "lucide-react";
@@ -9,7 +10,7 @@ const INSTAGRAM_URL = "#";
 const YOUTUBE_URL = "#";
 
 export function Footer() {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const nav = [
     { to: "/", label: t.nav.home },
     { to: "/fleet", label: t.nav.fleet },
@@ -35,7 +36,7 @@ export function Footer() {
           <ul className="space-y-2 text-sm">
             {nav.map((n) => (
               <li key={n.to}>
-                <Link to={n.to} className="text-foreground/80 hover:text-gold transition-colors">
+                <Link to={withLocale(locale, n.to)} className="text-foreground/80 hover:text-gold transition-colors">
                   {n.label}
                 </Link>
               </li>

@@ -1,5 +1,7 @@
-import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import { dictionaries, LOCALES, type Dict, type Locale } from "./dictionaries";
+import { createContext, useContext, useEffect, useMemo, type ReactNode } from "react";
+import { useLocation, useNavigate } from "@tanstack/react-router";
+import { dictionaries, type Dict, type Locale } from "./dictionaries";
+import { localeFromPath, stripLocale, withLocale } from "./path";
 
 type Ctx = {
   locale: Locale;
@@ -9,30 +11,11 @@ type Ctx = {
 
 const LocaleContext = createContext<Ctx | null>(null);
 
-const STORAGE_KEY = "pj_locale";
-
-function detectLocale(): Locale {
-  // 1. Проверяем сохранённый язык
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY) as Locale | null;
-    if (saved && LOCALES.includes(saved)) return saved;
-  } catch { }
-
-  // 2. Определяем язык браузера
-  const browserLangs = navigator.languages ?? [navigator.language];
-  for (const lang of browserLangs) {
-    const code = lang.toLowerCase();
-    if (code.startsWith("kk") || code.startsWith("kz")) return "kz";
-    if (code.startsWith("en")) return "en";
-    if (code.startsWith("ru")) return "ru";
-  }
-
-  // 3. По умолчанию русский
-  return "ru";
-}
-
 export function LocaleProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(detectLocale);
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  // Язык берём из URL — у каждого языка свой адрес (/kz, /en), русский на корне
+  const locale = localeFromPath(pathname);
 
   useEffect(() => {
     if (typeof document !== "undefined") {
@@ -40,16 +23,15 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
     }
   }, [locale]);
 
+  // Переключение языка = переход на тот же раздел в другом языковом разделе
   const setLocale = (l: Locale) => {
-    setLocaleState(l);
-    try {
-      localStorage.setItem(STORAGE_KEY, l);
-    } catch { }
+    const base = stripLocale(pathname);
+    navigate({ to: withLocale(l, base) });
   };
 
   const value = useMemo(
     () => ({ locale, setLocale, t: dictionaries[locale] }),
-    [locale],
+    [locale, pathname],
   );
 
   return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>;

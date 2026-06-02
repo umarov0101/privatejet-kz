@@ -46,7 +46,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-const SITE_URL = "https://privatejetkz.com";
+const SITE_URL = "https://privatejet.kz";
 const OG_IMAGE = `${SITE_URL}/og-cover.jpg`;
 
 const JSON_LD = JSON.stringify({
@@ -103,36 +103,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Private Jet KZ — Аренда трансфера в Астане" },
-      {
-        name: "description",
-        content:
-          "VIP-трансфер на Hyundai Staria LUXE в Астане. Встреча в аэропорту NQZ, трансфер Астана–Боровое от 200 ₸/км, корпоративный трансфер, аренда минивэна. ул. Толе Би, 25/1. WhatsApp +7 708 938 08 00.",
-      },
-      {
-        name: "keywords",
-        content:
-          "VIP трансфер Астана, аренда минивэна Астана, встреча в аэропорту NQZ Астана, трансфер Боровое из Астаны, корпоративный трансфер Казахстан, аренда частного джета Астана, частный джет Астана, Hyundai Staria аренда Астана, встреча делегаций Астана, межгород от 100000 тенге, трансфер аэропорт Нурсултан, аренда автомобиля с водителем Астана, бизнес трансфер Астана, Толе би 25/1 Астана, Private Jet KZ, жекеменшік джет жалға алу Астана",
-      },
       { name: "robots", content: "index, follow" },
       { name: "theme-color", content: "#0a0a0a" },
       { name: "geo.region", content: "KZ-AKM" },
       { name: "geo.placename", content: "Астана, Казахстан" },
       { name: "geo.position", content: "51.1801;71.4460" },
       { name: "ICBM", content: "51.1801, 71.4460" },
-      { name: "language", content: "Russian" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Private Jet KZ" },
-      { property: "og:title", content: "Private Jet KZ — Аренда трансфера в Астане" },
-      {
-        property: "og:description",
-        content:
-          "Аренда частного джета и VIP-трансфер по Астане и Казахстану. Флот из 5 Hyundai Staria LUXE. Капитанские кресла. Подача вовремя. 10 лет на рынке.",
-      },
       { property: "og:image", content: OG_IMAGE },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:url", content: SITE_URL },
-      { property: "og:locale", content: "ru_KZ" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Private Jet KZ — Аренда трансфера в Астане" },
       {
@@ -143,14 +124,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "canonical", href: SITE_URL },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
     ],
     scripts: [
       { type: "application/ld+json", children: JSON_LD },
       // TODO: замените XXXXXXXX на ваш реальный ID счётчика Яндекс.Метрики
-      // Зарегистрируйтесь на metrika.yandex.ru → Добавить счётчик → privatejetkz.com
+      // Зарегистрируйтесь на metrika.yandex.ru → Добавить счётчик → privatejet.kz
       // { src: "https://mc.yandex.ru/metrika/tag.js", async: true },
     ],
   }),

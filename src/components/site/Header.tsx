@@ -1,6 +1,7 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { useLocale } from "@/i18n/context";
+import { withLocale } from "@/i18n/path";
 import { LOCALES, LOCALE_LABEL, wa, type Locale } from "@/i18n/dictionaries";
 import logo from "@/assets/logo-opt.png";
 
@@ -35,7 +36,7 @@ export function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-5 md:px-10 h-16 md:h-20 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 group">
+        <Link to={withLocale(locale, "/")} className="flex items-center gap-3 group">
           <img src={logo} alt="Private Jet KZ" className="h-10 md:h-12 w-auto drop-shadow-[0_0_18px_oklch(0.78_0.10_85/0.35)]" />
           <span className="hidden sm:flex flex-col leading-tight">
             <span className="font-display text-xl md:text-2xl tracking-tight text-foreground">
@@ -51,7 +52,7 @@ export function Header() {
           {nav.map((n) => (
             <Link
               key={n.to}
-              to={n.to}
+              to={withLocale(locale, n.to)}
               className="text-sm tracking-wide text-foreground/80 hover:text-gold transition-colors relative after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-full after:bg-gold after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
               activeProps={{ className: "text-gold" }}
             >
@@ -94,7 +95,7 @@ export function Header() {
           {nav.map((n) => (
             <Link
               key={n.to}
-              to={n.to}
+              to={withLocale(locale, n.to)}
               className="text-base text-foreground/80"
               activeProps={{ className: "text-gold" }}
             >

@@ -13,6 +13,14 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as FleetRouteImport } from './routes/fleet'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as KzIndexRouteImport } from './routes/kz/index'
+import { Route as EnIndexRouteImport } from './routes/en/index'
+import { Route as KzServicesRouteImport } from './routes/kz/services'
+import { Route as KzFleetRouteImport } from './routes/kz/fleet'
+import { Route as KzContactRouteImport } from './routes/kz/contact'
+import { Route as EnServicesRouteImport } from './routes/en/services'
+import { Route as EnFleetRouteImport } from './routes/en/fleet'
+import { Route as EnContactRouteImport } from './routes/en/contact'
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
@@ -34,18 +42,74 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KzIndexRoute = KzIndexRouteImport.update({
+  id: '/kz/',
+  path: '/kz/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnIndexRoute = EnIndexRouteImport.update({
+  id: '/en/',
+  path: '/en/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KzServicesRoute = KzServicesRouteImport.update({
+  id: '/kz/services',
+  path: '/kz/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KzFleetRoute = KzFleetRouteImport.update({
+  id: '/kz/fleet',
+  path: '/kz/fleet',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KzContactRoute = KzContactRouteImport.update({
+  id: '/kz/contact',
+  path: '/kz/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnServicesRoute = EnServicesRouteImport.update({
+  id: '/en/services',
+  path: '/en/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnFleetRoute = EnFleetRouteImport.update({
+  id: '/en/fleet',
+  path: '/en/fleet',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnContactRoute = EnContactRouteImport.update({
+  id: '/en/contact',
+  path: '/en/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/fleet': typeof FleetRoute
   '/services': typeof ServicesRoute
+  '/en/contact': typeof EnContactRoute
+  '/en/fleet': typeof EnFleetRoute
+  '/en/services': typeof EnServicesRoute
+  '/kz/contact': typeof KzContactRoute
+  '/kz/fleet': typeof KzFleetRoute
+  '/kz/services': typeof KzServicesRoute
+  '/en/': typeof EnIndexRoute
+  '/kz/': typeof KzIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/fleet': typeof FleetRoute
   '/services': typeof ServicesRoute
+  '/en/contact': typeof EnContactRoute
+  '/en/fleet': typeof EnFleetRoute
+  '/en/services': typeof EnServicesRoute
+  '/kz/contact': typeof KzContactRoute
+  '/kz/fleet': typeof KzFleetRoute
+  '/kz/services': typeof KzServicesRoute
+  '/en': typeof EnIndexRoute
+  '/kz': typeof KzIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +117,58 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/fleet': typeof FleetRoute
   '/services': typeof ServicesRoute
+  '/en/contact': typeof EnContactRoute
+  '/en/fleet': typeof EnFleetRoute
+  '/en/services': typeof EnServicesRoute
+  '/kz/contact': typeof KzContactRoute
+  '/kz/fleet': typeof KzFleetRoute
+  '/kz/services': typeof KzServicesRoute
+  '/en/': typeof EnIndexRoute
+  '/kz/': typeof KzIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/fleet' | '/services'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/fleet'
+    | '/services'
+    | '/en/contact'
+    | '/en/fleet'
+    | '/en/services'
+    | '/kz/contact'
+    | '/kz/fleet'
+    | '/kz/services'
+    | '/en/'
+    | '/kz/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/fleet' | '/services'
-  id: '__root__' | '/' | '/contact' | '/fleet' | '/services'
+  to:
+    | '/'
+    | '/contact'
+    | '/fleet'
+    | '/services'
+    | '/en/contact'
+    | '/en/fleet'
+    | '/en/services'
+    | '/kz/contact'
+    | '/kz/fleet'
+    | '/kz/services'
+    | '/en'
+    | '/kz'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/fleet'
+    | '/services'
+    | '/en/contact'
+    | '/en/fleet'
+    | '/en/services'
+    | '/kz/contact'
+    | '/kz/fleet'
+    | '/kz/services'
+    | '/en/'
+    | '/kz/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +176,14 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FleetRoute: typeof FleetRoute
   ServicesRoute: typeof ServicesRoute
+  EnContactRoute: typeof EnContactRoute
+  EnFleetRoute: typeof EnFleetRoute
+  EnServicesRoute: typeof EnServicesRoute
+  KzContactRoute: typeof KzContactRoute
+  KzFleetRoute: typeof KzFleetRoute
+  KzServicesRoute: typeof KzServicesRoute
+  EnIndexRoute: typeof EnIndexRoute
+  KzIndexRoute: typeof KzIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +216,62 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/kz/': {
+      id: '/kz/'
+      path: '/kz'
+      fullPath: '/kz/'
+      preLoaderRoute: typeof KzIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/': {
+      id: '/en/'
+      path: '/en'
+      fullPath: '/en/'
+      preLoaderRoute: typeof EnIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kz/services': {
+      id: '/kz/services'
+      path: '/kz/services'
+      fullPath: '/kz/services'
+      preLoaderRoute: typeof KzServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kz/fleet': {
+      id: '/kz/fleet'
+      path: '/kz/fleet'
+      fullPath: '/kz/fleet'
+      preLoaderRoute: typeof KzFleetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kz/contact': {
+      id: '/kz/contact'
+      path: '/kz/contact'
+      fullPath: '/kz/contact'
+      preLoaderRoute: typeof KzContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/services': {
+      id: '/en/services'
+      path: '/en/services'
+      fullPath: '/en/services'
+      preLoaderRoute: typeof EnServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/fleet': {
+      id: '/en/fleet'
+      path: '/en/fleet'
+      fullPath: '/en/fleet'
+      preLoaderRoute: typeof EnFleetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/contact': {
+      id: '/en/contact'
+      path: '/en/contact'
+      fullPath: '/en/contact'
+      preLoaderRoute: typeof EnContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +280,14 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FleetRoute: FleetRoute,
   ServicesRoute: ServicesRoute,
+  EnContactRoute: EnContactRoute,
+  EnFleetRoute: EnFleetRoute,
+  EnServicesRoute: EnServicesRoute,
+  KzContactRoute: KzContactRoute,
+  KzFleetRoute: KzFleetRoute,
+  KzServicesRoute: KzServicesRoute,
+  EnIndexRoute: EnIndexRoute,
+  KzIndexRoute: KzIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
