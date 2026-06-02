@@ -20,6 +20,7 @@ export function HomePage() {
       <Hero />
       <Stats />
       <HeadlightsSection />
+      <VideoShowcase />
       <WhoWeAre />
       <Perks />
       <Marquee />
@@ -28,7 +29,6 @@ export function HomePage() {
       <AstanaTour />
       <AirportSection />
       <Reviews />
-      <VideoShowcase />
       <FAQ />
       <Booking />
       <FinalCTA />
