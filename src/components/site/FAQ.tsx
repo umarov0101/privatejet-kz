@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useLocale } from "@/i18n/context";
 import { Reveal } from "./Reveal";
 
@@ -94,27 +94,20 @@ export function FAQ() {
     const items = faqs[locale];
     const [open, setOpen] = useState<number | null>(null);
 
-    // Schema.org FAQPage — rich snippets in Google
-    useEffect(() => {
-        const schema = {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": items.map((item) => ({
-                "@type": "Question",
-                "name": item.q,
-                "acceptedAnswer": { "@type": "Answer", "text": item.a },
-            })),
-        };
-        const script = document.createElement("script");
-        script.type = "application/ld+json";
-        script.id = "faq-schema";
-        script.textContent = JSON.stringify(schema);
-        document.head.appendChild(script);
-        return () => { document.getElementById("faq-schema")?.remove(); };
-    }, [locale]);
+    // Schema.org FAQPage — отдаётся в серверном HTML, чтобы Google/Яндекс читали вопросы-ответы
+    const faqSchema = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": items.map((item) => ({
+            "@type": "Question",
+            "name": item.q,
+            "acceptedAnswer": { "@type": "Answer", "text": item.a },
+        })),
+    });
 
     return (
         <section className="py-14 md:py-20 bg-[var(--surface)]">
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqSchema }} />
             <div className="max-w-3xl mx-auto px-5 md:px-10">
                 <Reveal>
                     <div className="text-[10px] uppercase tracking-[0.35em] text-gold mb-4 text-center">FAQ</div>
