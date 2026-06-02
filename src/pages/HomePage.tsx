@@ -9,6 +9,7 @@ import { InteriorZoom } from "@/components/site/InteriorZoom";
 import { AirportSection } from "@/components/site/AirportSection";
 import { AstanaTour } from "@/components/site/AstanaTour";
 import { Reviews } from "@/components/site/Reviews";
+import { VideoShowcase } from "@/components/site/VideoShowcase";
 import { FAQ } from "@/components/site/FAQ";
 import { Booking } from "@/components/site/Booking";
 import { FinalCTA } from "@/components/site/FinalCTA";
@@ -27,6 +28,7 @@ export function HomePage() {
       <AstanaTour />
       <AirportSection />
       <Reviews />
+      <VideoShowcase />
       <FAQ />
       <Booking />
       <FinalCTA />

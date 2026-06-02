@@ -30,7 +30,7 @@ const STOPS: Record<"ru" | "kz" | "en", { title: string; sub: string }[]> = {
 const HEADERS: Record<"ru" | "kz" | "en", { eyebrow: string; title: string }> = {
   ru: { eyebrow: "Тур по Астане", title: "Один водитель — весь город" },
   kz: { eyebrow: "Астана бойынша тур", title: "Бір жүргізуші — бүкіл қала" },
-  en: { eyebrow: "Astana tour", title: "One driver — the entire city" },
+  en: { eyebrow: "Astana city tour with driver", title: "One driver — the entire city" },
 };
 
 export function AstanaTour() {

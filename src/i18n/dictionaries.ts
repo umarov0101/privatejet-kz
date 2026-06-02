@@ -60,6 +60,7 @@ type Dict = {
     items: { name: string; price: string; unit?: string; desc: string; waText: string }[];
   };
   interior: { eyebrow: string; title: string; sub: string };
+  videos: { eyebrow: string; title: string; sub: string };
   marquee: string[];
   airport: { eyebrow: string; title: string; sub: string };
   reviews: { eyebrow: string; title: string; sub: string; items: { name: string; role: string; text: string }[] };
@@ -213,6 +214,11 @@ const ru: Dict = {
     eyebrow: "Капитанские кресла с оттоманками",
     title: "Здесь работают, отдыхают, обсуждают сделки",
     sub: "Кожа, тёплая подсветка, тишина. Бутылка воды — уже в держателе.",
+  },
+  videos: {
+    eyebrow: "Видео",
+    title: "Смотрите, как мы работаем",
+    sub: "Реальные поездки, салон Staria LUXE и отзывы клиентов — на нашем YouTube-канале.",
   },
   marquee: [
     "10 ЛЕТ НА РЫНКЕ",
@@ -457,6 +463,11 @@ const kz: Dict = {
     title: "Мұнда жұмыс істейді, демалады, мәмілелерді талқылайды",
     sub: "Былғары, жылы жарық, тыныштық. Су бөтелкесі — қазір ұстағышта.",
   },
+  videos: {
+    eyebrow: "Видео",
+    title: "Біздің жұмысты көріңіз",
+    sub: "Нақты сапарлар, Staria LUXE салоны және клиент пікірлері — біздің YouTube арнамызда.",
+  },
   marquee: [
     "10 ЖЫЛ НАРЫҚТА",
     "3000+ САПАР",
@@ -614,7 +625,7 @@ const en: Dict = {
     title1: "Private Jet",
     title2: "Astana",
     subtitle:
-      "Premium transfer on Hyundai Staria LUXE. We meet guests, delegations and VIPs — on time, every time, with no fuss.",
+      "Premium VIP transfer and chauffeur service in Astana on the Hyundai Staria LUXE. Airport transfer at NQZ with an English-speaking driver — we meet guests, delegations and VIPs on time, every time.",
     badge1: "10 years in market",
     badge2: "3,000+ rides",
     badge3: "Fleet of 5 cars",
@@ -630,9 +641,9 @@ const en: Dict = {
   },
   who: {
     eyebrow: "About us",
-    title: "VIP Transfer with Our Own Fleet",
-    p1: "Private Jet KZ is a fleet of 5 identical Hyundai Staria LUXE and a team of drivers who respect your time. Not a dispatcher, not a taxi — our own cars, one single standard.",
-    p2: "Quiet cabin, full clean before every ride, captain leather seats, warm ambient light. You get the same level of service — no matter which car shows up.",
+    title: "VIP Transfer & Chauffeur Service with Our Own Fleet",
+    p1: "Private Jet KZ is a private car service in Astana — a fleet of 5 identical Hyundai Staria LUXE and a team of professional chauffeurs who respect your time. Not a dispatcher, not a taxi — our own cars, one single standard, ideal for executive and corporate transfer.",
+    p2: "Quiet cabin, full clean before every ride, captain leather seats, warm ambient light. Whether you need a private driver in Astana for the day or a single airport transfer, you get the same level of service — no matter which car shows up.",
     hint: "Open the door — see inside",
   },
   perks: {
@@ -683,7 +694,7 @@ const en: Dict = {
         name: "Intercity rides",
         price: "200",
         unit: "₸ / km",
-        desc: "Astana — Burabay, Karaganda, Kokshetau and any direction. Custom quote.",
+        desc: "Astana to Borovoe/Burabay, Karaganda, Kokshetau and any direction. Custom quote.",
         waText: "Hello, I need an intercity transfer on the Staria.",
       },
       {
@@ -700,11 +711,16 @@ const en: Dict = {
     title: "Where deals are made — between rides",
     sub: "Leather, warm ambient light, silence. A bottle of water already in the holder.",
   },
+  videos: {
+    eyebrow: "Video",
+    title: "See how we work",
+    sub: "Real rides, the Staria LUXE cabin and client reviews — on our YouTube channel.",
+  },
   marquee: ["10 YEARS IN MARKET", "3000+ RIDES", "FLEET OF 5 CARS", "CAPTAIN SEATS", "EXPERT DRIVERS", "24/7 AVAILABLE"],
   airport: {
     eyebrow: "At the airport",
     title: "We meet you at the gate with a sign",
-    sub: "Astana (NQZ). We arrive 30 minutes before landing, help with luggage, warm cabin ready.",
+    sub: "Astana airport transfer at NQZ with meet-and-greet and an English-speaking driver. We arrive 30 minutes before landing, help with luggage, warm cabin ready.",
   },
   reviews: {
     eyebrow: "Reviews",
@@ -755,7 +771,7 @@ const en: Dict = {
   },
   fleetPage: {
     title: "Hyundai Staria LUXE",
-    sub: "Top trim. All 5 cars — identical, well-maintained, with captain seats.",
+    sub: "Top-trim VIP minivan with driver. All 5 cars — identical, well-maintained, with captain seats — for VIP transfer and group transfer in Astana.",
     specTitle: "Transfer options",
     spec: [
       { label: "Passenger seats", value: "up to 6" },
@@ -778,7 +794,7 @@ const en: Dict = {
   },
   servicesPage: {
     title: "Services",
-    sub: "From hourly rental to delegation pickups — the full range of VIP transfer in Astana.",
+    sub: "From hourly chauffeur hire to delegation transport — the full range of VIP transfer, executive and corporate transfer, and group transfer in Astana.",
     items: [
       {
         name: "VIP transfer in the city",
@@ -804,14 +820,14 @@ const en: Dict = {
       {
         name: "Intercity rides",
         price: "from 200 ₸/km",
-        desc: "Astana — Burabay, Karaganda, Kokshetau, Pavlodar and more.",
+        desc: "Astana to Borovoe/Burabay transfer, Astana to Karaganda private transfer, Kokshetau, Pavlodar and more.",
         bullets: ["Custom route quote", "Experienced driver", "Multi-stop available"],
         waText: "Hello, I need an intercity ride on the Staria.",
       },
       {
         name: "Delegation pickups",
         price: "Custom",
-        desc: "Two cars and more. Programme, escort, timing.",
+        desc: "Two cars and more — delegation transport and group transfer in Astana. Programme, escort, timing.",
         bullets: ["Coordinator on call", "Single service standard", "Safety and punctuality"],
         waText: "Hello, let's discuss a delegation pickup.",
       },

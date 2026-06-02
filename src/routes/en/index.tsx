@@ -5,9 +5,12 @@ import { seo } from "@/lib/site";
 export const Route = createFileRoute("/en/")({
   head: () =>
     seo({
-      title: "Private Jet KZ — VIP transfer & chauffeur car rental in Astana",
+      title: "Astana Airport Transfer & VIP Chauffeur Service — Private Jet KZ",
       description:
-        "VIP ground transfer in Astana with the Hyundai Staria LUXE: airport meet & greet at NQZ, hourly chauffeur hire, intercity trips, delegation support. 10 years on the market. Request via WhatsApp.",
+        "VIP transfer in Astana on the Hyundai Staria LUXE: airport transfer & meet-and-greet at NQZ, chauffeur service, executive & corporate transfer, English-speaking driver, delegation transport, group transfer and intercity trips (Astana–Borovoe/Burabay, Karaganda). 10 years on the market. Book on WhatsApp.",
+      keywords:
+        "VIP transfer Astana, Astana airport transfer, chauffeur service Astana, executive car service Astana, corporate transfer Astana, business chauffeur Astana, private car service Astana, private driver Astana, private driver Kazakhstan, English-speaking driver Astana, Astana city tour with driver, minivan with driver Astana, delegation transport Astana, group transfer Astana, Astana to Borovoe transfer, Astana to Burabay transfer, Astana to Karaganda private transfer, VIP transfer Hyundai Staria LUXE",
+      ogTitle: "Astana Airport Transfer & VIP Chauffeur Service — Private Jet KZ",
       path: "/",
       locale: "en",
     }),

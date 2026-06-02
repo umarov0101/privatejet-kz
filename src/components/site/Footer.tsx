@@ -5,9 +5,8 @@ import { PHONE, TEL, wa } from "@/i18n/dictionaries";
 import logo from "@/assets/logo-opt.png";
 import { Instagram, Youtube } from "lucide-react";
 
-// TODO: замените # на реальные ссылки когда будут готовы
-const INSTAGRAM_URL = "#";
-const YOUTUBE_URL = "#";
+const INSTAGRAM_URL = "https://www.instagram.com/private_jet.kz";
+const YOUTUBE_URL = "https://www.youtube.com/channel/UCAAx3YHdlbb7GMpiIXscRwA";
 
 export function Footer() {
   const { t, locale } = useLocale();
