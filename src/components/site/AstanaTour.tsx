@@ -1,7 +1,7 @@
 import { useEffect, useRef, useCallback } from "react";
 import { useLocale } from "@/i18n/context";
-import skyline from "@/assets/astana-skyline-night.jpg";
-import staria from "@/assets/hero-staria-astana.jpg";
+import skyline from "@/assets/astana-skyline-night.webp";
+import staria from "@/assets/hero-staria-astana.webp";
 
 const STOPS: Record<"ru" | "kz" | "en", { title: string; sub: string }[]> = {
   ru: [
@@ -13,7 +13,7 @@ const STOPS: Record<"ru" | "kz" | "en", { title: string; sub: string }[]> = {
   ],
   kz: [
     { title: "NQZ әуежайы", sub: "Ұшып келуден 30 минут бұрын тақтайшамен қарсы аламыз" },
-    { title: "Бәйтерек", sub: "Елорданың жүрегі — Stories үшін бірінші кадр" },
+    { title: "Бәйтерек", sub: "Еліміздің жүрегі — Stories үшін бірінші кадр" },
     { title: "Хан Шатыр", sub: "Шопинг және panoramic-аймақта түскі ас" },
     { title: "Тәуелсіздік сарайы", sub: "Іскерлік кездесулер мен қабылдаулар" },
     { title: "EXPO / Astana Hub", sub: "Іскерлік аудан — шешімдер қабылданатын жер" },

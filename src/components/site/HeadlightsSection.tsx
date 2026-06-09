@@ -1,6 +1,6 @@
 import { useLocale } from "@/i18n/context";
 import { useEffect, useRef, useState } from "react";
-import headlightsImg from "@/assets/staria-front-headlights.jpg";
+import headlightsImg from "@/assets/staria-front-headlights.webp";
 
 export function HeadlightsSection() {
   const { t } = useLocale();

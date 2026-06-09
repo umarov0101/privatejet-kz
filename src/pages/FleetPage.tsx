@@ -1,15 +1,15 @@
 import { useLocale } from "@/i18n/context";
 import { Reveal } from "@/components/site/Reveal";
 import { FinalCTA } from "@/components/site/FinalCTA";
-import interior from "@/assets/staria-interior-captain.jpg";
-import detail from "@/assets/staria-airport-fleet.jpg";
-import front from "@/assets/staria-front-headlights.jpg";
-import heroFleet from "@/assets/hero-staria-astana.jpg";
-import real1 from "@/assets/fleet-real-1.jpg";
-import real2 from "@/assets/fleet-real-2.jpg";
-import real3 from "@/assets/fleet-real-3.jpg";
-import real4 from "@/assets/fleet-real-4.jpg";
-import real5 from "@/assets/fleet-real-5.jpg";
+import interior from "@/assets/staria-interior-captain.webp";
+import detail from "@/assets/staria-airport-fleet.webp";
+import front from "@/assets/staria-front-headlights.webp";
+import heroFleet from "@/assets/hero-staria-astana.webp";
+import real1 from "@/assets/fleet-real-1.webp";
+import real2 from "@/assets/fleet-real-2.webp";
+import real3 from "@/assets/fleet-real-3.webp";
+import real4 from "@/assets/fleet-real-4.webp";
+import real5 from "@/assets/fleet-real-5.webp";
 
 const REAL_PHOTOS = [
   { src: real1, caption: "VIP-терминал T1 · Ночной рейс" },

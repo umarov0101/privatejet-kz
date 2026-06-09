@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLocale } from "@/i18n/context";
 
 function useCountUp(end: number, duration = 2000, start = false) {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(() => typeof window === "undefined" ? end : 0);
     useEffect(() => {
         if (!start) return;
         let startTime: number | null = null;
@@ -20,19 +20,19 @@ function useCountUp(end: number, duration = 2000, start = false) {
 const stats = {
     ru: [
         { value: 10, suffix: "", label: "лет на рынке" },
-        { value: 500, suffix: "+", label: "довольных клиентов" },
+        { value: 3000, suffix: "+", label: "поездок выполнено" },
         { value: 5, suffix: "", label: "Staria LUXE в парке" },
         { value: 24, suffix: "/7", label: "на связи всегда" },
     ],
     kz: [
         { value: 10, suffix: "", label: "жыл нарықта" },
-        { value: 500, suffix: "+", label: "риза клиент" },
+        { value: 3000, suffix: "+", label: "сапар орындалды" },
         { value: 5, suffix: "", label: "Staria LUXE паркте" },
         { value: 24, suffix: "/7", label: "әрқашан байланыста" },
     ],
     en: [
         { value: 10, suffix: "", label: "years on the market" },
-        { value: 500, suffix: "+", label: "happy clients" },
+        { value: 3000, suffix: "+", label: "rides completed" },
         { value: 5, suffix: "", label: "Staria LUXE in fleet" },
         { value: 24, suffix: "/7", label: "always available" },
     ],

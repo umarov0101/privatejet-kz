@@ -1,6 +1,6 @@
 import { useLocale } from "@/i18n/context";
 import { Reveal } from "./Reveal";
-import airport from "@/assets/staria-airport-meet.jpg";
+import airport from "@/assets/staria-airport-meet.webp";
 
 export function AirportSection() {
   const { t } = useLocale();

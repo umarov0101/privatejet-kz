@@ -2,7 +2,7 @@ import { useLocale } from "@/i18n/context";
 import { PHONE, TEL, wa } from "@/i18n/dictionaries";
 import { Reveal } from "./Reveal";
 import { MagneticButton } from "./MagneticButton";
-import skyline from "@/assets/astana-skyline-night.jpg";
+import skyline from "@/assets/astana-skyline-night.webp";
 
 export function FinalCTA() {
   const { t } = useLocale();

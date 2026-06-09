@@ -1,7 +1,7 @@
 import { useLocale } from "@/i18n/context";
 import { Reveal } from "@/components/site/Reveal";
 import { PHONE, TEL, wa } from "@/i18n/dictionaries";
-import skyline from "@/assets/astana-skyline-night.jpg";
+import skyline from "@/assets/astana-skyline-night.webp";
 import { Instagram, Youtube } from "lucide-react";
 
 const INSTAGRAM_URL = "#"; // TODO: вставьте ссылку

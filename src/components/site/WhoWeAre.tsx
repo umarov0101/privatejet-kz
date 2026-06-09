@@ -1,7 +1,7 @@
 import { useLocale } from "@/i18n/context";
 import { useEffect, useRef, useState } from "react";
-import sideOpen from "@/assets/staria-side-open.jpg";
-import interior from "@/assets/staria-interior-captain.jpg";
+import sideOpen from "@/assets/staria-side-open.webp";
+import interior from "@/assets/staria-interior-captain.webp";
 
 export function WhoWeAre() {
   const { t } = useLocale();

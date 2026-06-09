@@ -5,13 +5,13 @@ import { seo } from "@/lib/site";
 export const Route = createFileRoute("/contact")({
   head: () =>
     seo({
-      title: "Контакты — Аренда частного джета в Астане | Private Jet KZ +7 708 938 08 00",
+      title: "Контакты — VIP-трансфер в Астане | Private Jet KZ +7 708 938 08 00",
       description:
-        "Закажите аренду частного джета или VIP-трансфер в Астане. WhatsApp 24/7: +7 708 938 08 00. Быстрый ответ. Казахстан.",
+        "Закажите VIP-трансфер на Hyundai Staria LUXE в Астане. WhatsApp 24/7: +7 708 938 08 00. Быстрый ответ. Казахстан.",
       keywords:
-        "контакты Private Jet KZ, заказать VIP трансфер Астана, забронировать частный джет Астана, WhatsApp трансфер Астана, телефон аренда джета Казахстан",
+        "контакты Private Jet KZ, заказать VIP трансфер Астана, WhatsApp трансфер Астана, телефон VIP трансфер Казахстан, трансфер аэропорт NQZ заказать",
       ogTitle: "Контакты — Private Jet KZ Астана",
-      ogDescription: "Заказ VIP-трансфера и аренды в Астане. WhatsApp 24/7: +7 708 938 08 00.",
+      ogDescription: "Заказ VIP-трансфера в Астане на Hyundai Staria LUXE. WhatsApp 24/7: +7 708 938 08 00.",
       path: "/contact",
       locale: "ru",
     }),

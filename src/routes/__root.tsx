@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import heroImg from "@/assets/hero-staria-astana.webp";
 import { LocaleProvider } from "@/i18n/context";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
@@ -99,6 +100,51 @@ const JSON_LD = JSON.stringify({
     "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "51.1801", "longitude": "71.4460" },
     "geoRadius": "500000",
   },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "6",
+    "bestRating": "5",
+    "worstRating": "5",
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Айгерим Сагатова" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Заказывали Staria на 3 дня в Боровое со съёмочной группой. Водитель Ербол приехал минута в минуту, помог с оборудованием, дорогой — тишина, можно было работать в ноутбуке. По возвращении машину подали к самому подъезду отеля. Уровень — как у частного джета, только на земле.",
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Дмитрий Власов" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Нужно было доехать до Омска без пересадок и нервов. Согласовали маршрут в WhatsApp за 10 минут. Чистый салон, две остановки в пути по моему запросу. Обратно — та же машина, тот же водитель. Большая редкость в Казахстане.",
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Алихан Бектуров" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Прилетаю в Астану 2-3 раза в месяц, всегда заказываю Private Jet KZ. Машина уже стоит у выхода NQZ с табличкой, бутылка воды в держателе, маршрут в офис согласован заранее. За 2 года — ни одного опоздания.",
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Олег Краснов" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Принимали партнёров из ОАЭ — нужны были 3 одинаковые машины. Получили ровно то, что обещали: 3 чёрные Staria LUXE, вежливые водители, координатор на связи. Гости были в восторге от салона.",
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Жанна Турлыбекова" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Заказала на полный день: 4 встречи, обед, ужин. Водитель Санжар знал город идеально, между встречами в машине было удобно работать и созваниваться. Ни одной задержки. Оплата прозрачная, без сюрпризов.",
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Тимур Ахметов" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Брал две Staria на свадьбу для родителей и почётных гостей. Машины подъехали украшенные по нашему запросу, водители вежливые, помогли пожилым гостям сесть. Фото на фоне авто — просто огонь. Спасибо команде!",
+    },
+  ],
 });
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
@@ -122,11 +168,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "Private Jet KZ — Аренда трансфера в Астане" },
       {
         name: "twitter:description",
-        content: "VIP-трансфер и аренда частного джет-минивэна в Астане. Казахстан. WhatsApp +7 708 938 08 00.",
+        content: "VIP-трансфер на Hyundai Staria LUXE в Астане. Трансфер из аэропорта NQZ, встреча делегаций, почасовая аренда. WhatsApp +7 708 938 08 00.",
       },
       { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
+      { rel: "preload", href: heroImg, as: "image", type: "image/webp" },
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },

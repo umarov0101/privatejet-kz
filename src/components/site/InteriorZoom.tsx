@@ -1,7 +1,7 @@
 import { useLocale } from "@/i18n/context";
 import { useEffect, useRef, useState } from "react";
-import interior from "@/assets/staria-interior-captain.jpg";
-import detail from "@/assets/staria-interior-rear.jpg";
+import interior from "@/assets/staria-interior-captain.webp";
+import detail from "@/assets/staria-interior-rear.webp";
 
 export function InteriorZoom() {
   const { t } = useLocale();

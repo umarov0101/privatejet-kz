@@ -66,12 +66,81 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
   return brandedErrorResponse();
 }
 
+const SECURITY_HEADERS: Record<string, string> = {
+  "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+  "X-Content-Type-Options": "nosniff",
+  "X-Frame-Options": "SAMEORIGIN",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+};
+
+// Explicit allow for AI crawlers — overrides any Cloudflare-managed bot rules
+const ROBOTS_TXT = `User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://privatejet.kz/sitemap.xml
+`;
+
+function addSecurityHeaders(response: Response): Response {
+  const headers = new Headers(response.headers);
+  for (const [key, value] of Object.entries(SECURITY_HEADERS)) {
+    headers.set(key, value);
+  }
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
+    const url = new URL(request.url);
+    const host = request.headers.get("host") ?? url.hostname;
+
+    // www → non-www 301 redirect
+    if (host.startsWith("www.")) {
+      const apex = host.slice(4);
+      return new Response(null, {
+        status: 301,
+        headers: {
+          Location: `${url.protocol}//${apex}${url.pathname}${url.search}`,
+          ...SECURITY_HEADERS,
+        },
+      });
+    }
+
+    // Serve clean robots.txt — bypasses Cloudflare's AI bot injection
+    if (url.pathname === "/robots.txt") {
+      return new Response(ROBOTS_TXT, {
+        status: 200,
+        headers: {
+          "content-type": "text/plain; charset=utf-8",
+          "cache-control": "public, max-age=86400",
+        },
+      });
+    }
+
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      const normalized = await normalizeCatastrophicSsrResponse(response);
+      return addSecurityHeaders(normalized);
     } catch (error) {
       console.error(error);
       return brandedErrorResponse();

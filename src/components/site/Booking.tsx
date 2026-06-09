@@ -25,8 +25,8 @@ export function Booking() {
 
   const validate = () => {
     const newErrors: { name?: string; date?: string } = {};
-    if (!name.trim()) newErrors.name = "Введите ваше имя";
-    if (!date) newErrors.date = "Выберите дату";
+    if (!name.trim()) newErrors.name = t.booking.errName;
+    if (!date) newErrors.date = t.booking.errDate;
     return newErrors;
   };
 
@@ -40,11 +40,11 @@ export function Booking() {
     setErrors({});
     const dateStr = date ? format(date, "PPP", { locale: dfLocale }) : "—";
     const lines = [
-      `Заявка с сайта Private Jet KZ`,
+      t.booking.waHeader,
       ``,
-      `Услуга: ${service}`,
-      `Дата: ${dateStr}`,
-      name && `Имя: ${name}`,
+      `${t.booking.waService}: ${service}`,
+      `${t.booking.waDate}: ${dateStr}`,
+      name && `${t.booking.waName}: ${name}`,
     ].filter(Boolean).join("\n");
     window.open(wa(lines), "_blank", "noopener,noreferrer");
     setSubmitted(true);
@@ -83,19 +83,19 @@ export function Booking() {
                 <CheckCircle2 className="w-16 h-16 text-gold" strokeWidth={1.2} />
               </div>
               <h3 className="font-display text-3xl md:text-4xl mb-4">
-                Заявка отправлена!
+                {t.booking.successTitle}
               </h3>
               <p className="text-foreground/70 text-lg max-w-md mx-auto mb-2">
-                Санат свяжется с вами в WhatsApp в течение нескольких минут.
+                {t.booking.successSub}
               </p>
               <p className="text-foreground/50 text-sm mb-10">
-                Работаем 24/7 — ответим быстро.
+                {t.booking.successNote}
               </p>
               <button
                 onClick={handleReset}
                 className="px-8 py-3 rounded-full border border-gold/40 text-sm text-gold hover:border-gold hover:bg-gold/5 transition-colors"
               >
-                Оформить ещё одну заявку
+                {t.booking.successReset}
               </button>
             </div>
           ) : (
@@ -174,7 +174,7 @@ export function Booking() {
               </div>
 
               <p className="text-xs text-foreground/40">
-                <span className="text-gold">*</span> — обязательные поля · остальное уточнит менеджер в WhatsApp
+                <span className="text-gold">*</span> {t.booking.required}
               </p>
 
               <div className="pt-2 flex justify-center">

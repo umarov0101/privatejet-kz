@@ -1,10 +1,10 @@
 import { Reveal } from "./Reveal";
 import { useLocale } from "@/i18n/context";
-import img1 from "@/assets/fleet-real-1.jpg";
-import img2 from "@/assets/fleet-real-2.jpg";
-import img3 from "@/assets/fleet-real-3.jpg";
-import img4 from "@/assets/fleet-real-4.jpg";
-import img5 from "@/assets/fleet-real-5.jpg";
+import img1 from "@/assets/fleet-real-1.webp";
+import img2 from "@/assets/fleet-real-2.webp";
+import img3 from "@/assets/fleet-real-3.webp";
+import img4 from "@/assets/fleet-real-4.webp";
+import img5 from "@/assets/fleet-real-5.webp";
 
 const PHOTOS = [
   { src: img1, alt: "Hyundai Staria LUXE у VIP-терминала T1 ночью", caption: "VIP-терминал T1 · Ночной рейс" },

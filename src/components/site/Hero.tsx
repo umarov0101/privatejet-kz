@@ -1,6 +1,6 @@
 import { useLocale } from "@/i18n/context";
 import { wa } from "@/i18n/dictionaries";
-import heroImg from "@/assets/hero-staria-astana.jpg";
+import heroImg from "@/assets/hero-staria-astana.webp";
 import { useEffect, useRef, useState } from "react";
 import { MagneticButton } from "./MagneticButton";
 
@@ -30,8 +30,9 @@ export function Hero() {
       >
         <img
           src={heroImg}
-          alt="Hyundai Staria LUXE in Astana"
+          alt="Hyundai Staria LUXE для VIP-трансфера в Астане"
           className="w-full h-full object-cover"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background" />
         <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/10 to-transparent" />
@@ -42,8 +43,8 @@ export function Hero() {
       {/* Content */}
       <div className="relative h-full max-w-7xl mx-auto px-5 md:px-10 flex flex-col justify-end pb-16 md:pb-24 pt-24">
         <h1 className="font-display text-[clamp(2.25rem,7.5vw,8rem)] leading-[0.95] tracking-tight max-w-5xl">
-          <span className="block">Private Jet KZ</span>
-
+          <span className="block">{t.hero.title1}</span>
+          <span className="block gradient-gold-text">{t.hero.title2}</span>
         </h1>
         <p className="mt-6 md:mt-8 max-w-xl text-base md:text-lg text-foreground/75">
           {t.hero.subtitle}
