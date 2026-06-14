@@ -34,6 +34,26 @@ const faqs = {
             q: "Можно заказать несколько машин?",
             a: "Да. Для делегаций и групп предоставляем от 2 и более одинаковых Staria LUXE с едиными стандартами сервиса.",
         },
+        {
+            q: "Сколько стоит трансфер из аэропорта Астаны?",
+            a: "Трансфер из аэропорта NQZ в центр Астаны — от 25 000 ₸ на Hyundai Staria LUXE. Точная стоимость зависит от района и времени. Назовите адрес в WhatsApp — рассчитаем сразу.",
+        },
+        {
+            q: "За сколько нужно бронировать?",
+            a: "Лучше за несколько часов, но часто подаём и день в день. Для делегаций и нескольких машин — желательно за 1–2 дня. Срочный заказ — напишите в WhatsApp, постараемся помочь.",
+        },
+        {
+            q: "Есть ли детское кресло?",
+            a: "Да, предоставляем детское кресло или бустер бесплатно — просто укажите возраст ребёнка при заказе.",
+        },
+        {
+            q: "Встречаете ли вы ночью и рано утром?",
+            a: "Да, работаем круглосуточно 7 дней в неделю. Ночные рейсы и ранние вылеты из аэропорта Астаны — без доплаты за время суток.",
+        },
+        {
+            q: "Подходит ли Staria для свадьбы или мероприятия?",
+            a: "Да. Hyundai Staria LUXE — представительный минивэн для свадеб, фотосессий и деловых мероприятий. Можем подать несколько одинаковых авто для кортежа.",
+        },
     ],
     kz: [
         {
@@ -60,6 +80,26 @@ const faqs = {
             q: "Бірнеше көлік тапсырыс беруге бола ма?",
             a: "Иә. Делегациялар үшін 2 және одан да көп бірдей Staria LUXE ұсынамыз.",
         },
+        {
+            q: "Астана әуежайынан трансфер қанша тұрады?",
+            a: "NQZ әуежайынан Астана орталығына трансфер — Hyundai Staria LUXE-те 25 000 ₸-ден басталады. Нақты бағасы ауданға және уақытқа байланысты. Мекенжайды WhatsApp-қа жазыңыз — бірден есептейміз.",
+        },
+        {
+            q: "Қанша уақыт бұрын брондау керек?",
+            a: "Бірнеше сағат бұрын дұрыс, бірақ көбіне сол күні де береміз. Делегациялар мен бірнеше көлік үшін — 1–2 күн бұрын. Шұғыл тапсырыс — WhatsApp-қа жазыңыз.",
+        },
+        {
+            q: "Балаларға арналған орындық бар ма?",
+            a: "Иә, балалар орындығын немесе бустерді тегін береміз — тапсырыс кезінде баланың жасын көрсетіңіз.",
+        },
+        {
+            q: "Түнде және таңертең ерте қарсы аласыздар ма?",
+            a: "Иә, тәулік бойы аптасына 7 күн жұмыс істейміз. Түнгі рейстер мен ерте ұшулар — уақыт үшін қосымша ақысыз.",
+        },
+        {
+            q: "Staria той немесе іс-шараға жарай ма?",
+            a: "Иә. Hyundai Staria LUXE — той, фотосессия және іскерлік іс-шаралар үшін өкілді минивэн. Кортеж үшін бірнеше бірдей көлік бере аламыз.",
+        },
     ],
     en: [
         {
@@ -85,6 +125,26 @@ const faqs = {
         {
             q: "Can I book multiple cars?",
             a: "Yes. For delegations and groups we provide 2 or more identical Staria LUXE with the same service standard.",
+        },
+        {
+            q: "How much is a transfer from Astana airport?",
+            a: "A transfer from NQZ airport to central Astana starts at 25,000 ₸ in a Hyundai Staria LUXE. The exact price depends on the district and time — send your address on WhatsApp for an instant quote.",
+        },
+        {
+            q: "How far in advance should I book?",
+            a: "A few hours ahead is ideal, but same-day rides are often possible. For delegations or several cars, 1–2 days is better. Need it urgently? Message us on WhatsApp.",
+        },
+        {
+            q: "Do you provide a child seat?",
+            a: "Yes, we provide a child seat or booster free of charge — just tell us your child's age when booking.",
+        },
+        {
+            q: "Do you operate at night and early morning?",
+            a: "Yes, we work 24/7. Night flights and early departures from Astana airport carry no time-of-day surcharge.",
+        },
+        {
+            q: "Is the Staria suitable for a wedding or event?",
+            a: "Yes. The Hyundai Staria LUXE is a representative minivan for weddings, photo shoots and business events. We can provide several identical cars for a motorcade.",
         },
     ],
 };
@@ -136,7 +196,7 @@ export function FAQ() {
                                 </button>
                                 <div
                                     className="overflow-hidden transition-all duration-400"
-                                    style={{ maxHeight: open === i ? "200px" : "0px" }}
+                                    style={{ maxHeight: open === i ? "360px" : "0px" }}
                                 >
                                     <p className="px-7 pb-6 text-foreground/70 leading-relaxed">
                                         {item.a}
