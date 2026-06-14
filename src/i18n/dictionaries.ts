@@ -120,6 +120,21 @@ type Dict = {
     addressValue: string;
     manager: string;
   };
+  airportPage: {
+    eyebrow: string;
+    h1: string;
+    sub: string;
+    priceFrom: string;
+    priceNote: string;
+    stepsTitle: string;
+    steps: { n: string; t: string; d: string }[];
+    includesTitle: string;
+    includes: string[];
+    faqTitle: string;
+    faq: { q: string; a: string }[];
+    waText: string;
+    ctaTitle: string;
+  };
   langSwitch: string;
 };
 
@@ -385,6 +400,39 @@ const ru: Dict = {
     addressTitle: "Адрес",
     addressValue: "ул. Толе би, 25/1, г. Астана",
     manager: "Санат · менеджер",
+  },
+  airportPage: {
+    eyebrow: "Аэропорт NQZ · Астана",
+    h1: "Трансфер из аэропорта Астаны NQZ",
+    sub: "Водитель встретит вас у выхода с именной табличкой, поможет с багажом и доставит в любую точку города. Отслеживаем рейс в реальном времени — подача корректируется автоматически.",
+    priceFrom: "от 25 000 ₸",
+    priceNote: "за поездку · без доплаты за ночное время",
+    stepsTitle: "Как это работает",
+    steps: [
+      { n: "01", t: "Напишите маршрут", d: "Укажите номер рейса и адрес назначения в WhatsApp. Подтвердим за несколько минут." },
+      { n: "02", t: "Встреча у выхода", d: "Водитель ждёт у зоны прилёта NQZ с именной табличкой. Поможет с любым количеством багажа." },
+      { n: "03", t: "Комфортная доставка", d: "Hyundai Staria LUXE с тихим салоном, кожаными креслами и климат-контролем — прямо до вашего адреса." },
+    ],
+    includesTitle: "Что включено",
+    includes: [
+      "Именная табличка с вашим именем",
+      "Отслеживание рейса в реальном времени",
+      "Ожидание до 60 минут после посадки",
+      "Помощь с багажом",
+      "Бутылка воды в салоне",
+      "Работаем круглосуточно, без доплат за ночь",
+    ],
+    faqTitle: "Частые вопросы об аэропортовом трансфере",
+    faq: [
+      { q: "Сколько стоит трансфер из аэропорта NQZ?", a: "Трансфер из аэропорта Астаны (NQZ) в центр города — от 25 000 ₸. Точная стоимость зависит от района назначения. Укажите адрес в WhatsApp — рассчитаем сразу." },
+      { q: "Как найти водителя в аэропорту?", a: "Водитель ждёт в зале прилёта аэропорта NQZ с именной табличкой. После посадки напишите в WhatsApp — уточним точное местоположение." },
+      { q: "Что если рейс задержали или прилетел раньше?", a: "Мы отслеживаем статус рейса в реальном времени. Если рейс задержан или прилетел раньше расписания — водитель скорректирует время автоматически. Ожидание до 60 минут после посадки — бесплатно." },
+      { q: "Работаете ли вы ночью и рано утром?", a: "Да, 24/7 без выходных. Ночные рейсы, ранние вылеты и поздние прилёты — без доплат за время суток." },
+      { q: "Можно заказать несколько машин для делегации?", a: "Да. Для делегаций и групп предоставляем от 2 и более одинаковых Hyundai Staria LUXE с единым стандартом сервиса." },
+      { q: "За сколько нужно бронировать трансфер?", a: "Лучше за несколько часов, но часто принимаем заявки в тот же день. Для делегаций и нескольких машин — желательно за 1–2 дня. Пишите в WhatsApp — уточним наличие." },
+    ],
+    waText: "Здравствуйте, хочу заказать трансфер из аэропорта NQZ.",
+    ctaTitle: "Закажите трансфер прямо сейчас",
   },
   langSwitch: "Язык",
 };
@@ -652,6 +700,39 @@ const kz: Dict = {
     addressValue: "Төле би к-сі, 25/1, Астана қ.",
     manager: "Санат · менеджер",
   },
+  airportPage: {
+    eyebrow: "NQZ әуежайы · Астана",
+    h1: "Астана NQZ әуежайынан трансфер",
+    sub: "Жүргізуші сізді ұшу залынан атыңыздағы тақтайшамен қарсы алады, багажға көмектеседі және қалаға жеткізеді. Рейсті нақты уақытта бақылаймыз — уақыт автоматты түрде реттеледі.",
+    priceFrom: "25 000 ₸-ден",
+    priceNote: "сапар үшін · түнгі уақыт үшін қосымша ақысыз",
+    stepsTitle: "Қалай жұмыс істейді",
+    steps: [
+      { n: "01", t: "Маршрутты жіберіңіз", d: "WhatsApp-та рейс нөмірін және мекенжайды жіберіңіз. Бірнеше минут ішінде растаймыз." },
+      { n: "02", t: "Ұшу залында қарсы алу", d: "Жүргізуші NQZ ұшу залында атыңыздағы тақтайшамен күтеді. Кез келген мөлшердегі багажға көмектеседі." },
+      { n: "03", t: "Жайлы жеткізу", d: "Hyundai Staria LUXE — тыныш салон, былғары орындықтар, климат-бақылау — тікелей мекенжайыңызға дейін." },
+    ],
+    includesTitle: "Не кіреді",
+    includes: [
+      "Атыңыздағы жеке тақтайша",
+      "Рейсті нақты уақытта бақылау",
+      "Қонғаннан кейін 60 минутқа дейін тегін күту",
+      "Багажға көмек",
+      "Салонда су бөтелкесі",
+      "Тәулік бойы, түнгі қосымша ақысыз",
+    ],
+    faqTitle: "Әуежай трансфері туралы жиі сұрақтар",
+    faq: [
+      { q: "NQZ әуежайынан трансфер қанша тұрады?", a: "Астана (NQZ) әуежайынан қала орталығына трансфер — 25 000 ₸-ден бастап. Нақты бағасы ауданға байланысты. Мекенжайды WhatsApp-қа жіберіңіз — бірден есептейміз." },
+      { q: "Жүргізушіні әуежайда қалай табамын?", a: "Жүргізуші NQZ әуежайының ұшу залында атыңыздағы тақтайшамен күтеді. Қонғаннан кейін WhatsApp-қа жазыңыз — нақты орынды нақтылаймыз." },
+      { q: "Рейс кешіктірілсе немесе ерте қонса не болады?", a: "Рейстің мәртебесін нақты уақытта бақылаймыз. Кешіктірілсе немесе ерте қонса — жүргізуші уақытты автоматты түрде реттейді. Қонғаннан кейін 60 минутқа дейін күту — тегін." },
+      { q: "Түнде және таңертең ерте жұмыс істейсіздер ме?", a: "Иә, тәулік бойы демалыссыз. Түнгі рейстер мен ерте қонулар — уақыт үшін қосымша ақысыз." },
+      { q: "Делегация үшін бірнеше көлік тапсырыс беруге бола ма?", a: "Иә. Делегациялар мен топтар үшін 2 және одан да көп бірдей Hyundai Staria LUXE — бірыңғай қызмет стандартымен беріледі." },
+      { q: "Трансферді қанша уақыт бұрын брондау керек?", a: "Бірнеше сағат бұрын жақсы, бірақ сол күні де қабылдаймыз. Делегациялар мен бірнеше көлік үшін — 1–2 күн бұрын жақсы. WhatsApp-қа жазыңыз." },
+    ],
+    waText: "Сәлем, NQZ әуежайынан трансфер тапсырыс бергім келеді.",
+    ctaTitle: "Қазір трансфер тапсырыс беріңіз",
+  },
   langSwitch: "Тіл",
 };
 
@@ -910,6 +991,39 @@ const en: Dict = {
     addressTitle: "Address",
     addressValue: "25/1 Tole bi St, Astana",
     manager: "Sanat · manager",
+  },
+  airportPage: {
+    eyebrow: "Astana Airport NQZ",
+    h1: "Airport Transfer Astana NQZ",
+    sub: "Your driver meets you at arrivals with a name board, helps with luggage and takes you anywhere in the city. We track your flight in real time — pickup adjusts automatically.",
+    priceFrom: "from 25,000 ₸",
+    priceNote: "per ride · no night surcharge",
+    stepsTitle: "How it works",
+    steps: [
+      { n: "01", t: "Send us your details", d: "Share your flight number and destination via WhatsApp. We confirm within minutes." },
+      { n: "02", t: "Met at arrivals", d: "Your driver waits at the NQZ arrivals hall with a name board and helps with any amount of luggage." },
+      { n: "03", t: "Comfortable ride", d: "Hyundai Staria LUXE — quiet cabin, leather captain seats, climate control — direct to your address." },
+    ],
+    includesTitle: "What's included",
+    includes: [
+      "Name board with your name",
+      "Real-time flight tracking",
+      "Up to 60 min free waiting after landing",
+      "Luggage assistance",
+      "Bottled water in the cabin",
+      "24/7 service, no night surcharge",
+    ],
+    faqTitle: "Airport transfer FAQ",
+    faq: [
+      { q: "How much is a transfer from Astana NQZ airport?", a: "A transfer from Astana airport (NQZ) to the city centre starts at 25,000 ₸. The exact price depends on your destination. Send your address on WhatsApp for an instant quote." },
+      { q: "How do I find my driver at the airport?", a: "Your driver will be waiting at the NQZ arrivals hall with a name board. After landing, message us on WhatsApp and we'll confirm the exact location." },
+      { q: "What if my flight is delayed or arrives early?", a: "We track your flight status in real time. If your flight is delayed or arrives early, the driver adjusts automatically. Up to 60 minutes of waiting after landing is free." },
+      { q: "Do you operate at night and early morning?", a: "Yes, 24/7 year-round. Night flights and early arrivals carry no time-of-day surcharge." },
+      { q: "Can I book multiple cars for a delegation?", a: "Yes. For delegations and groups we provide 2 or more identical Hyundai Staria LUXE with the same service standard." },
+      { q: "How far in advance should I book the transfer?", a: "A few hours ahead is usually fine, but same-day bookings are often possible. For delegations or multiple cars, 1–2 days is better. Message us on WhatsApp to check availability." },
+    ],
+    waText: "Hello, I'd like to book an airport transfer from NQZ.",
+    ctaTitle: "Book your airport transfer now",
   },
   langSwitch: "Language",
 };
