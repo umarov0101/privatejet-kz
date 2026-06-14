@@ -213,13 +213,6 @@ const ru: Dict = {
         waText: "Здравствуйте, хочу арендовать Staria без водителя.",
       },
       {
-        name: "Междугородние поездки",
-        price: "200",
-        unit: "₸ / км",
-        desc: "Астана — Боровое, Караганда, Кокшетау и любые направления. Рассчитываем индивидуально.",
-        waText: "Здравствуйте, нужен межгородской трансфер на Staria.",
-      },
-      {
         name: "Встреча делегаций",
         price: "Индивидуально",
         unit: "",
@@ -486,13 +479,6 @@ const kz: Dict = {
         waText: "Сәлем, Staria-ны жүргізушісіз жалдағым келеді.",
       },
       {
-        name: "Қалааралық сапарлар",
-        price: "200",
-        unit: "₸ / км",
-        desc: "Астана — Бурабай, Қарағанды, Көкшетау және басқа бағыттар.",
-        waText: "Сәлем, Staria-да қалааралық трансфер керек.",
-      },
-      {
         name: "Делегацияларды қарсы алу",
         price: "Жеке",
         unit: "",
@@ -757,13 +743,6 @@ const en: Dict = {
         unit: "₸ / day",
         desc: "Hyundai Staria (8–11 seats) without a driver. From 3 days — 75 000 ₸, from 10 days — 69 000 ₸. Deposit 50 000 ₸, limit 200 km/day.",
         waText: "Hello, I'd like to rent the Staria without a driver.",
-      },
-      {
-        name: "Intercity rides",
-        price: "200",
-        unit: "₸ / km",
-        desc: "Astana to Borovoe/Burabay, Karaganda, Kokshetau and any direction. Custom quote.",
-        waText: "Hello, I need an intercity transfer on the Staria.",
       },
       {
         name: "Delegation pickup",
