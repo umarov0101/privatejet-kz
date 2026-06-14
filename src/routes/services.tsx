@@ -58,9 +58,9 @@ const SERVICES_JSON_LD = JSON.stringify([
     "areaServed": { "@type": "City", "name": "Астана" },
     "offers": {
       "@type": "Offer",
-      "price": "80000",
+      "price": "69000",
       "priceCurrency": "KZT",
-      "priceSpecification": { "@type": "UnitPriceSpecification", "price": "80000", "priceCurrency": "KZT", "unitText": "сутки" },
+      "priceSpecification": { "@type": "UnitPriceSpecification", "price": "69000", "priceCurrency": "KZT", "unitText": "сутки" },
     },
   },
 ]);

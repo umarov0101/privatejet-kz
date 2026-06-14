@@ -93,7 +93,7 @@ const JSON_LD = JSON.stringify({
       { "@type": "Offer", "name": "VIP трансфер Астана", "price": "25000", "priceCurrency": "KZT" },
       { "@type": "Offer", "name": "Аренда по часам", "price": "15000", "priceCurrency": "KZT" },
       { "@type": "Offer", "name": "Междугородние поездки (Боровое, Караганда)", "price": "200", "priceCurrency": "KZT" },
-      { "@type": "Offer", "name": "Аренда Hyundai Staria без водителя (сутки)", "price": "80000", "priceCurrency": "KZT" },
+      { "@type": "Offer", "name": "Аренда Hyundai Staria без водителя (сутки)", "price": "69000", "priceCurrency": "KZT" },
     ],
   },
   "serviceArea": {

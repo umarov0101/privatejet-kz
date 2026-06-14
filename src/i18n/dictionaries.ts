@@ -209,7 +209,7 @@ const ru: Dict = {
         name: "Авто без водителя",
         price: "80 000",
         unit: "₸ / сутки",
-        desc: "Hyundai Staria на 8–11 мест в аренду без водителя. Минимум 1 сутки, машина чистая и заправленная.",
+        desc: "Hyundai Staria на 8–11 мест без водителя. От 3 суток — 75 000 ₸, от 10 суток — 69 000 ₸. Залог 50 000 ₸, лимит 200 км/сутки.",
         waText: "Здравствуйте, хочу арендовать Staria без водителя.",
       },
       {
@@ -359,9 +359,9 @@ const ru: Dict = {
       },
       {
         name: "Авто без водителя",
-        price: "от 80 000 ₸ / сутки",
-        desc: "Аренда Hyundai Staria на 8–11 мест без водителя в Астане. Вместительный минивэн для семьи, поездки большой компанией или рабочих задач. Машину выдаём чистой и заправленной, минимальный срок аренды — 1 сутки.",
-        bullets: ["Hyundai Staria, 8–11 мест", "Минимальный срок аренды — 1 сутки", "Нужны вод. удостоверение и удостоверение личности", "Залог возвращается после аренды", "Сумму залога и лимит пробега уточняйте при брони"],
+        price: "от 69 000 ₸ / сутки",
+        desc: "Аренда Hyundai Staria на 8–11 мест без водителя в Астане. Вместительный минивэн для семьи, поездки большой компанией или рабочих задач. Чем дольше срок аренды — тем ниже суточная цена. При необходимости доставим машину по городу.",
+        bullets: ["Hyundai Staria, 8–11 мест", "От 1 суток — 80 000 ₸ / сутки", "От 3 суток — 75 000 ₸ / сутки", "От 10 суток — 69 000 ₸ / сутки", "Возраст от 21 года, стаж от 3 лет (страховой класс от 8)", "Суточный лимит 200 км, залог 50 000 ₸", "Доставим машину по городу при необходимости"],
         waText: "Здравствуйте, интересует аренда Staria без водителя.",
       },
       {
@@ -482,7 +482,7 @@ const kz: Dict = {
         name: "Жүргізушісіз авто",
         price: "80 000",
         unit: "₸ / тәулік",
-        desc: "8–11 орындық Hyundai Staria жүргізушісіз жалға. Кемінде 1 тәулік, көлік таза әрі жанармайы құйылған.",
+        desc: "8–11 орындық Hyundai Staria жүргізушісіз. 3 тәуліктен — 75 000 ₸, 10 тәуліктен — 69 000 ₸. Кепіл 50 000 ₸, лимит 200 км/тәулік.",
         waText: "Сәлем, Staria-ны жүргізушісіз жалдағым келеді.",
       },
       {
@@ -632,9 +632,9 @@ const kz: Dict = {
       },
       {
         name: "Жүргізушісіз авто",
-        price: "80 000 ₸ / тәулік бастап",
-        desc: "Астанада 8–11 орындық Hyundai Staria-ны жүргізушісіз жалға. Отбасыға, үлкен компаниямен сапарға немесе жұмыс істерге арналған кең минивэн. Көлікті таза әрі жанармайы құйылған күйде береміз, ең аз мерзім — 1 тәулік.",
-        bullets: ["Hyundai Staria, 8–11 орын", "Ең аз мерзім — 1 тәулік", "Жүргізуші куәлігі мен жеке куәлік қажет", "Кепілдік жалдаудан кейін қайтарылады", "Кепіл сомасы мен жүгіру лимитін брондау кезінде нақтылаңыз"],
+        price: "69 000 ₸ / тәулік бастап",
+        desc: "Астанада 8–11 орындық Hyundai Staria-ны жүргізушісіз жалға. Отбасыға, үлкен компаниямен сапарға немесе жұмыс істерге арналған кең минивэн. Мерзім ұзағырақ болса — тәуліктік баға арзанырақ. Қажет болса, көлікті қала бойынша жеткіземіз.",
+        bullets: ["Hyundai Staria, 8–11 орын", "1 тәуліктен — 80 000 ₸ / тәулік", "3 тәуліктен — 75 000 ₸ / тәулік", "10 тәуліктен — 69 000 ₸ / тәулік", "21 жастан, өтілі 3 жылдан (сақтандыру класы 8-ден)", "Тәуліктік лимит 200 км, кепіл 50 000 ₸", "Қажет болса қала бойынша жеткіземіз"],
         waText: "Сәлем, Staria-ны жүргізушісіз жалдау қызықтырады.",
       },
       {
@@ -755,7 +755,7 @@ const en: Dict = {
         name: "Self-drive rental",
         price: "80 000",
         unit: "₸ / day",
-        desc: "Hyundai Staria (8–11 seats) rented without a driver. Minimum 1 day, car handed over clean and fuelled.",
+        desc: "Hyundai Staria (8–11 seats) without a driver. From 3 days — 75 000 ₸, from 10 days — 69 000 ₸. Deposit 50 000 ₸, limit 200 km/day.",
         waText: "Hello, I'd like to rent the Staria without a driver.",
       },
       {
@@ -898,9 +898,9 @@ const en: Dict = {
       },
       {
         name: "Self-drive rental",
-        price: "from 80 000 ₸ / day",
-        desc: "Rent a Hyundai Staria (8–11 seats) without a driver in Astana. A spacious minivan for family trips, group travel or work tasks. The car is handed over clean and fuelled, minimum rental period is 1 day.",
-        bullets: ["Hyundai Staria, 8–11 seats", "Minimum rental — 1 day", "Driver's licence and ID required", "Deposit refunded after the rental", "Deposit amount and mileage limit confirmed at booking"],
+        price: "from 69 000 ₸ / day",
+        desc: "Rent a Hyundai Staria (8–11 seats) without a driver in Astana. A spacious minivan for family trips, group travel or work tasks. The longer the rental, the lower the daily rate. We can deliver the car within the city if needed.",
+        bullets: ["Hyundai Staria, 8–11 seats", "From 1 day — 80 000 ₸ / day", "From 3 days — 75 000 ₸ / day", "From 10 days — 69 000 ₸ / day", "Age 21+, 3+ years of driving experience (insurance class 8+)", "Daily limit 200 km, deposit 50 000 ₸", "City delivery available if needed"],
         waText: "Hello, I'm interested in renting the Staria without a driver.",
       },
       {

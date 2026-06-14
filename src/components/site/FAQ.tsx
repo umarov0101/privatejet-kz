@@ -56,7 +56,7 @@ const faqs = {
         },
         {
             q: "Можно ли арендовать Staria без водителя?",
-            a: "Да. Сдаём Hyundai Staria на 8–11 мест без водителя — от 80 000 ₸ в сутки. Понадобятся водительское удостоверение и удостоверение личности, залог возвращается после аренды. Сумму залога и лимит пробега уточняйте в WhatsApp.",
+            a: "Да. Сдаём Hyundai Staria на 8–11 мест без водителя: от 1 суток — 80 000 ₸, от 3 суток — 75 000 ₸, от 10 суток — 69 000 ₸ в сутки. Условия: возраст от 21 года, стаж от 3 лет (страховой класс от 8), суточный лимит 200 км, залог 50 000 ₸. При необходимости доставим машину по городу.",
         },
     ],
     kz: [
@@ -106,7 +106,7 @@ const faqs = {
         },
         {
             q: "Staria-ны жүргізушісіз жалдауға бола ма?",
-            a: "Иә. 8–11 орындық Hyundai Staria-ны жүргізушісіз береміз — тәулігіне 80 000 ₸-ден. Жүргізуші куәлігі мен жеке куәлік қажет, кепілдік жалдаудан кейін қайтарылады. Кепіл сомасы мен жүгіру лимитін WhatsApp-та нақтылаңыз.",
+            a: "Иә. 8–11 орындық Hyundai Staria-ны жүргізушісіз береміз: 1 тәуліктен — 80 000 ₸, 3 тәуліктен — 75 000 ₸, 10 тәуліктен — тәулігіне 69 000 ₸. Шарттар: 21 жастан, өтілі 3 жылдан (сақтандыру класы 8-ден), тәуліктік лимит 200 км, кепіл 50 000 ₸. Қажет болса көлікті қала бойынша жеткіземіз.",
         },
     ],
     en: [
@@ -156,7 +156,7 @@ const faqs = {
         },
         {
             q: "Can I rent the Staria without a driver?",
-            a: "Yes. We rent the Hyundai Staria (8–11 seats) without a driver from 80,000 ₸ per day. You'll need a driver's licence and an ID, and the deposit is refunded after the rental. Deposit amount and mileage limit are confirmed on WhatsApp.",
+            a: "Yes. We rent the Hyundai Staria (8–11 seats) without a driver: from 1 day — 80,000 ₸, from 3 days — 75,000 ₸, from 10 days — 69,000 ₸ per day. Conditions: age 21+, 3+ years of driving experience (insurance class 8+), daily limit 200 km, deposit 50,000 ₸. We can deliver the car within the city if needed.",
         },
     ],
 };
@@ -208,7 +208,7 @@ export function FAQ() {
                                 </button>
                                 <div
                                     className="overflow-hidden transition-all duration-400"
-                                    style={{ maxHeight: open === i ? "360px" : "0px" }}
+                                    style={{ maxHeight: open === i ? "600px" : "0px" }}
                                 >
                                     <p className="px-7 pb-6 text-foreground/70 leading-relaxed">
                                         {item.a}
