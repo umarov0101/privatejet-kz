@@ -5,7 +5,7 @@ import { seo } from "@/lib/site";
 export const Route = createFileRoute("/en/")({
   head: () =>
     seo({
-      title: "Astana Airport Transfer & VIP Chauffeur Service — Private Jet KZ",
+      title: "Astana Airport Transfer & VIP Chauffeur — Private Jet KZ",
       description:
         "VIP transfer in Astana on the Hyundai Staria LUXE: airport transfer & meet-and-greet at NQZ, chauffeur service, executive & corporate transfer, English-speaking driver, delegation transport, group transfer and intercity trips (Astana–Borovoe/Burabay, Karaganda). 10 years on the market. Book on WhatsApp.",
       keywords:

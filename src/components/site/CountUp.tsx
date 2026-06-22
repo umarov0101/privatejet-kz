@@ -1,8 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 
-export function CountUp({ end, duration = 1600, prefix = "", suffix = "" }: { end: number; duration?: number; prefix?: string; suffix?: string }) {
+export function CountUp({
+  end,
+  duration = 1600,
+  prefix = "",
+  suffix = "",
+}: {
+  end: number;
+  duration?: number;
+  prefix?: string;
+  suffix?: string;
+}) {
   const ref = useRef<HTMLSpanElement | null>(null);
-  const [val, setVal] = useState(() => typeof window === "undefined" ? end : 0);
+  const [val, setVal] = useState(() => (typeof window === "undefined" ? end : 0));
   const started = useRef(false);
 
   useEffect(() => {

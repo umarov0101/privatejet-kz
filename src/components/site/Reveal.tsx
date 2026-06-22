@@ -33,10 +33,10 @@ export function Reveal({
     return () => io.disconnect();
   }, []);
 
-  const Comp = As as any;
+  const Comp = As as React.ElementType;
   return (
     <Comp
-      ref={ref as any}
+      ref={ref}
       className={`${className} transition-all duration-1000 ease-out will-change-transform`}
       style={{
         transitionDelay: `${delay}ms`,

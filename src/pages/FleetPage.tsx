@@ -27,13 +27,21 @@ export function FleetPage() {
       <section className="pt-32 md:pt-44 pb-16 md:pb-24 bg-background">
         <div className="max-w-7xl mx-auto px-5 md:px-10">
           <Reveal>
-            <div className="text-[10px] uppercase tracking-[0.35em] text-gold mb-4">{t.nav.fleet}</div>
+            <div className="text-[10px] uppercase tracking-[0.35em] text-gold mb-4">
+              {t.nav.fleet}
+            </div>
             <h1 className="font-display text-5xl md:text-7xl leading-[1.02]">{f.title}</h1>
             <p className="mt-6 max-w-xl text-foreground/70 text-lg">{f.sub}</p>
           </Reveal>
           <Reveal delay={200}>
             <div className="mt-12 relative aspect-[16/9] rounded-2xl overflow-hidden border border-gold/20 shadow-luxe">
-              <img src={heroFleet} alt="Hyundai Staria LUXE в Астане" className="w-full h-full object-cover object-center" />
+              <img
+                src={heroFleet}
+                width={1536}
+                height={1024}
+                alt="Hyundai Staria LUXE в Астане"
+                className="w-full h-full object-cover object-center"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
             </div>
           </Reveal>
@@ -45,7 +53,10 @@ export function FleetPage() {
           <div className="text-[9px] uppercase tracking-[0.3em] text-gold mb-3">{f.specTitle}</div>
           <div className="grid md:grid-cols-2 gap-px bg-gold/10 rounded-2xl overflow-hidden">
             {f.spec.map((s) => (
-              <div key={s.label} className="bg-[var(--surface)] p-5 flex justify-between items-baseline gap-6">
+              <div
+                key={s.label}
+                className="bg-[var(--surface)] p-5 flex justify-between items-baseline gap-6"
+              >
                 <span className="text-foreground/60 text-sm">{s.label}</span>
                 <span className="font-display text-lg text-gold-bright">{s.value}</span>
               </div>
@@ -68,15 +79,17 @@ export function FleetPage() {
                     loading="lazy"
                   />
                   <div className="absolute bottom-0 left-0 right-0 px-3 py-2 bg-gradient-to-t from-background/80 to-transparent">
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-gold/80">{p.caption}</span>
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-gold/80">
+                      {p.caption}
+                    </span>
                   </div>
                 </div>
               </Reveal>
             ))}
             {[
               { src: interior, caption: "Капитанские кресла · Салон" },
-              { src: detail,   caption: "Аэропорт NQZ · Флот" },
-              { src: front,    caption: "Hyundai Staria LUXE · Астана" },
+              { src: detail, caption: "Аэропорт NQZ · Флот" },
+              { src: front, caption: "Hyundai Staria LUXE · Астана" },
             ].map((p, i) => (
               <Reveal key={`int-${i}`} delay={(5 + i) * 60}>
                 <div className="group relative aspect-[4/3] rounded-xl overflow-hidden border border-gold/15 hover:border-gold/40 transition-colors bg-[var(--surface)]">
@@ -88,7 +101,9 @@ export function FleetPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 px-3 py-2">
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-gold/80">{p.caption}</span>
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-gold/80">
+                      {p.caption}
+                    </span>
                   </div>
                 </div>
               </Reveal>
@@ -99,7 +114,9 @@ export function FleetPage() {
           {f.feature.map((it, i) => (
             <Reveal key={it.t} delay={i * 80}>
               <div className="p-6 border border-gold/15 rounded-2xl bg-[var(--surface)] h-full">
-                <div className="text-gold text-2xl font-display">{String(i + 1).padStart(2, "0")}</div>
+                <div className="text-gold text-2xl font-display">
+                  {String(i + 1).padStart(2, "0")}
+                </div>
                 <h3 className="mt-3 font-display text-xl">{it.t}</h3>
                 <p className="mt-2 text-sm text-foreground/65">{it.d}</p>
               </div>

@@ -24,20 +24,26 @@ export function Header() {
     { to: "/", label: t.nav.home },
     { to: "/fleet", label: t.nav.fleet },
     { to: "/services", label: t.nav.services },
+    { to: "/directions", label: t.nav.directions },
+    { to: "/blog", label: t.nav.blog },
     { to: "/contact", label: t.nav.contact },
   ] as const;
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-background/70 backdrop-blur-xl border-b border-gold/15"
-          : "bg-transparent"
+        scrolled ? "bg-background/70 backdrop-blur-xl border-b border-gold/15" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-5 md:px-10 h-16 md:h-20 flex items-center justify-between">
         <Link to={withLocale(locale, "/")} className="flex items-center gap-3 group">
-          <img src={logo} alt="Private Jet KZ" className="h-10 md:h-12 w-auto drop-shadow-[0_0_18px_oklch(0.78_0.10_85/0.35)]" />
+          <img
+            src={logo}
+            width={200}
+            height={200}
+            alt="Private Jet KZ"
+            className="h-10 md:h-12 w-auto drop-shadow-[0_0_18px_oklch(0.78_0.10_85/0.35)]"
+          />
           <span className="hidden sm:flex flex-col leading-tight">
             <span className="font-display text-xl md:text-2xl tracking-tight text-foreground">
               Private<span className="gradient-gold-text"> Jet KZ</span>
@@ -52,7 +58,7 @@ export function Header() {
           {nav.map((n) => (
             <Link
               key={n.to}
-              to={withLocale(locale, n.to)}
+              to={n.to === "/directions" ? n.to : withLocale(locale, n.to)}
               className="text-sm tracking-wide text-foreground/80 hover:text-gold transition-colors relative after:absolute after:left-0 after:-bottom-1.5 after:h-px after:w-full after:bg-gold after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:origin-left"
               activeProps={{ className: "text-gold" }}
             >
@@ -77,9 +83,15 @@ export function Header() {
             aria-label="Menu"
           >
             <div className="space-y-1.5">
-              <div className={`w-6 h-px bg-current transition-transform ${open ? "translate-y-1.5 rotate-45" : ""}`} />
-              <div className={`w-6 h-px bg-current transition-opacity ${open ? "opacity-0" : ""}`} />
-              <div className={`w-6 h-px bg-current transition-transform ${open ? "-translate-y-1.5 -rotate-45" : ""}`} />
+              <div
+                className={`w-6 h-px bg-current transition-transform ${open ? "translate-y-1.5 rotate-45" : ""}`}
+              />
+              <div
+                className={`w-6 h-px bg-current transition-opacity ${open ? "opacity-0" : ""}`}
+              />
+              <div
+                className={`w-6 h-px bg-current transition-transform ${open ? "-translate-y-1.5 -rotate-45" : ""}`}
+              />
             </div>
           </button>
         </div>
@@ -95,7 +107,7 @@ export function Header() {
           {nav.map((n) => (
             <Link
               key={n.to}
-              to={withLocale(locale, n.to)}
+              to={n.to === "/directions" ? n.to : withLocale(locale, n.to)}
               className="text-base text-foreground/80"
               activeProps={{ className: "text-gold" }}
             >
@@ -124,9 +136,7 @@ function LangSwitch({ locale, setLocale }: { locale: Locale; setLocale: (l: Loca
           key={l}
           onClick={() => setLocale(l)}
           className={`px-2.5 py-1 text-[11px] tracking-widest rounded-full transition-colors ${
-            locale === l
-              ? "bg-gold text-background"
-              : "text-foreground/60 hover:text-gold"
+            locale === l ? "bg-gold text-background" : "text-foreground/60 hover:text-gold"
           }`}
         >
           {LOCALE_LABEL[l]}

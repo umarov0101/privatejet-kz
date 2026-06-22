@@ -4,19 +4,32 @@ import { PHONE, TEL, wa } from "@/i18n/dictionaries";
 import skyline from "@/assets/astana-skyline-night.webp";
 import { Instagram, Youtube } from "lucide-react";
 
-const INSTAGRAM_URL = "#"; // TODO: вставьте ссылку
-const YOUTUBE_URL = "#";   // TODO: вставьте ссылку
+const INSTAGRAM_URL = "https://www.instagram.com/private_jet.kz";
+const YOUTUBE_URL = "https://www.youtube.com/channel/UCAAx3YHdlbb7GMpiIXscRwA";
+const MAP_SRC = `https://www.google.com/maps?q=${encodeURIComponent(
+  "Private Jet KZ, ул. Толе би 25/1, Астана",
+)}&z=15&output=embed`;
 
 export function ContactPage() {
   const { t } = useLocale();
   const c = t.contactPage;
   return (
     <section className="relative min-h-screen pt-32 md:pt-44 pb-24 overflow-hidden">
-      <img src={skyline} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover opacity-25" loading="lazy" />
+      <img
+        src={skyline}
+        width={1400}
+        height={933}
+        alt=""
+        aria-hidden
+        className="absolute inset-0 w-full h-full object-cover opacity-25"
+        loading="lazy"
+      />
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/85 to-background" />
       <div className="relative max-w-5xl mx-auto px-5 md:px-10">
         <Reveal>
-          <div className="text-[10px] uppercase tracking-[0.35em] text-gold mb-4">{t.nav.contact}</div>
+          <div className="text-[10px] uppercase tracking-[0.35em] text-gold mb-4">
+            {t.nav.contact}
+          </div>
           <h1 className="font-display text-5xl md:text-7xl leading-[1.02]">{c.title}</h1>
           <p className="mt-6 text-foreground/70 text-lg max-w-xl">{c.sub}</p>
         </Reveal>
@@ -30,7 +43,9 @@ export function ContactPage() {
               className="p-8 rounded-2xl border border-gold/30 bg-[var(--surface)] hover:border-gold transition-all group"
             >
               <div className="text-xs uppercase tracking-[0.25em] text-gold">{c.waLabel}</div>
-              <div className="mt-3 font-display text-3xl group-hover:gradient-gold-text transition-colors">{PHONE}</div>
+              <div className="mt-3 font-display text-3xl group-hover:gradient-gold-text transition-colors">
+                {PHONE}
+              </div>
               <div className="mt-2 text-sm text-foreground/60">WhatsApp · {"Менеджер · 24/7"}</div>
             </a>
             <a
@@ -38,7 +53,9 @@ export function ContactPage() {
               className="p-8 rounded-2xl border border-gold/30 bg-[var(--surface)] hover:border-gold transition-all group"
             >
               <div className="text-xs uppercase tracking-[0.25em] text-gold">{c.callLabel}</div>
-              <div className="mt-3 font-display text-3xl group-hover:gradient-gold-text transition-colors">{PHONE}</div>
+              <div className="mt-3 font-display text-3xl group-hover:gradient-gold-text transition-colors">
+                {PHONE}
+              </div>
               <div className="mt-2 text-sm text-foreground/60">{"Менеджер · 24/7"}</div>
             </a>
           </div>
@@ -46,7 +63,9 @@ export function ContactPage() {
 
         <Reveal delay={300}>
           <div className="mt-10 flex items-center gap-4">
-            <span className="text-xs uppercase tracking-[0.25em] text-foreground/50">Мы в соцсетях</span>
+            <span className="text-xs uppercase tracking-[0.25em] text-foreground/50">
+              Мы в соцсетях
+            </span>
             <a
               href={INSTAGRAM_URL}
               target="_blank"
@@ -82,6 +101,18 @@ export function ContactPage() {
               <div className="text-xs uppercase tracking-[0.25em] text-gold">{c.addressTitle}</div>
               <div className="mt-2 font-display text-xl">{c.addressValue}</div>
             </div>
+          </div>
+        </Reveal>
+
+        <Reveal delay={400}>
+          <div className="mt-10 overflow-hidden rounded-2xl border border-gold/20">
+            <iframe
+              title="Private Jet KZ — Астана, ул. Толе би 25/1"
+              src={MAP_SRC}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-[320px] md:h-[400px] border-0 grayscale-[0.2]"
+            />
           </div>
         </Reveal>
       </div>

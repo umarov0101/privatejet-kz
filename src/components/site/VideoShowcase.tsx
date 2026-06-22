@@ -50,9 +50,7 @@ export function VideoShowcase() {
           <h2 className="font-display text-4xl md:text-5xl text-center leading-[1.05] mb-3">
             {t.videos.title}
           </h2>
-          <p className="text-center text-foreground/70 max-w-2xl mx-auto mb-12">
-            {t.videos.sub}
-          </p>
+          <p className="text-center text-foreground/70 max-w-2xl mx-auto mb-12">{t.videos.sub}</p>
         </Reveal>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 max-w-6xl mx-auto">
@@ -66,6 +64,8 @@ export function VideoShowcase() {
               >
                 <img
                   src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`}
+                  width={480}
+                  height={360}
                   alt={v.title}
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"

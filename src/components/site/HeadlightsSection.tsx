@@ -24,7 +24,9 @@ export function HeadlightsSection() {
         <div className="relative aspect-video rounded-2xl overflow-hidden border border-gold/20 shadow-luxe">
           <img
             src={headlightsImg}
-            alt="Staria headlights"
+            width={1536}
+            height={1024}
+            alt="Фары Hyundai Staria LUXE"
             className={`w-full h-full object-cover transition-all duration-[2000ms] ${
               on ? "brightness-100" : "brightness-50"
             }`}
@@ -44,10 +46,10 @@ export function HeadlightsSection() {
         </div>
 
         <div>
-          <div className="text-[10px] uppercase tracking-[0.35em] text-gold mb-4">{t.headlights.eyebrow}</div>
-          <h2 className="font-display text-4xl md:text-6xl leading-[1.05]">
-            {t.headlights.title}
-          </h2>
+          <div className="text-[10px] uppercase tracking-[0.35em] text-gold mb-4">
+            {t.headlights.eyebrow}
+          </div>
+          <h2 className="font-display text-4xl md:text-6xl leading-[1.05]">{t.headlights.title}</h2>
           <p className="mt-6 text-foreground/70 text-lg max-w-md">{t.headlights.sub}</p>
         </div>
       </div>

@@ -29,10 +29,7 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
     navigate({ to: withLocale(l, base) });
   };
 
-  const value = useMemo(
-    () => ({ locale, setLocale, t: dictionaries[locale] }),
-    [locale, pathname],
-  );
+  const value = useMemo(() => ({ locale, setLocale, t: dictionaries[locale] }), [locale, pathname]);
 
   return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>;
 }

@@ -9,19 +9,73 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TransferAstanaOmskRouteImport } from './routes/transfer-astana-omsk'
+import { Route as TransferAstanaMagnitogorskRouteImport } from './routes/transfer-astana-magnitogorsk'
+import { Route as TransferAstanaKokshetauRouteImport } from './routes/transfer-astana-kokshetau'
+import { Route as TransferAstanaKaragandaRouteImport } from './routes/transfer-astana-karaganda'
+import { Route as TransferAstanaChelyabinskRouteImport } from './routes/transfer-astana-chelyabinsk'
+import { Route as TransferAstanaBorovoeRouteImport } from './routes/transfer-astana-borovoe'
+import { Route as TransferAstanaBarnaulRouteImport } from './routes/transfer-astana-barnaul'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as FleetRouteImport } from './routes/fleet'
+import { Route as DirectionsRouteImport } from './routes/directions'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AirportRouteImport } from './routes/airport'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as KzIndexRouteImport } from './routes/kz/index'
 import { Route as EnIndexRouteImport } from './routes/en/index'
+import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as KzServicesRouteImport } from './routes/kz/services'
 import { Route as KzFleetRouteImport } from './routes/kz/fleet'
 import { Route as KzContactRouteImport } from './routes/kz/contact'
+import { Route as KzAirportRouteImport } from './routes/kz/airport'
 import { Route as EnServicesRouteImport } from './routes/en/services'
 import { Route as EnFleetRouteImport } from './routes/en/fleet'
 import { Route as EnContactRouteImport } from './routes/en/contact'
+import { Route as EnAirportRouteImport } from './routes/en/airport'
+import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
+import { Route as KzBlogIndexRouteImport } from './routes/kz/blog/index'
+import { Route as EnBlogIndexRouteImport } from './routes/en/blog/index'
+import { Route as KzBlogSlugRouteImport } from './routes/kz/blog/$slug'
+import { Route as EnBlogSlugRouteImport } from './routes/en/blog/$slug'
 
+const TransferAstanaOmskRoute = TransferAstanaOmskRouteImport.update({
+  id: '/transfer-astana-omsk',
+  path: '/transfer-astana-omsk',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TransferAstanaMagnitogorskRoute =
+  TransferAstanaMagnitogorskRouteImport.update({
+    id: '/transfer-astana-magnitogorsk',
+    path: '/transfer-astana-magnitogorsk',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TransferAstanaKokshetauRoute = TransferAstanaKokshetauRouteImport.update({
+  id: '/transfer-astana-kokshetau',
+  path: '/transfer-astana-kokshetau',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TransferAstanaKaragandaRoute = TransferAstanaKaragandaRouteImport.update({
+  id: '/transfer-astana-karaganda',
+  path: '/transfer-astana-karaganda',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TransferAstanaChelyabinskRoute =
+  TransferAstanaChelyabinskRouteImport.update({
+    id: '/transfer-astana-chelyabinsk',
+    path: '/transfer-astana-chelyabinsk',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TransferAstanaBorovoeRoute = TransferAstanaBorovoeRouteImport.update({
+  id: '/transfer-astana-borovoe',
+  path: '/transfer-astana-borovoe',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TransferAstanaBarnaulRoute = TransferAstanaBarnaulRouteImport.update({
+  id: '/transfer-astana-barnaul',
+  path: '/transfer-astana-barnaul',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
@@ -32,9 +86,19 @@ const FleetRoute = FleetRouteImport.update({
   path: '/fleet',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DirectionsRoute = DirectionsRouteImport.update({
+  id: '/directions',
+  path: '/directions',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AirportRoute = AirportRouteImport.update({
+  id: '/airport',
+  path: '/airport',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -52,6 +116,11 @@ const EnIndexRoute = EnIndexRouteImport.update({
   path: '/en/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KzServicesRoute = KzServicesRouteImport.update({
   id: '/kz/services',
   path: '/kz/services',
@@ -65,6 +134,11 @@ const KzFleetRoute = KzFleetRouteImport.update({
 const KzContactRoute = KzContactRouteImport.update({
   id: '/kz/contact',
   path: '/kz/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KzAirportRoute = KzAirportRouteImport.update({
+  id: '/kz/airport',
+  path: '/kz/airport',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EnServicesRoute = EnServicesRouteImport.update({
@@ -82,112 +156,310 @@ const EnContactRoute = EnContactRouteImport.update({
   path: '/en/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EnAirportRoute = EnAirportRouteImport.update({
+  id: '/en/airport',
+  path: '/en/airport',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KzBlogIndexRoute = KzBlogIndexRouteImport.update({
+  id: '/kz/blog/',
+  path: '/kz/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnBlogIndexRoute = EnBlogIndexRouteImport.update({
+  id: '/en/blog/',
+  path: '/en/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KzBlogSlugRoute = KzBlogSlugRouteImport.update({
+  id: '/kz/blog/$slug',
+  path: '/kz/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnBlogSlugRoute = EnBlogSlugRouteImport.update({
+  id: '/en/blog/$slug',
+  path: '/en/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/airport': typeof AirportRoute
   '/contact': typeof ContactRoute
+  '/directions': typeof DirectionsRoute
   '/fleet': typeof FleetRoute
   '/services': typeof ServicesRoute
+  '/transfer-astana-barnaul': typeof TransferAstanaBarnaulRoute
+  '/transfer-astana-borovoe': typeof TransferAstanaBorovoeRoute
+  '/transfer-astana-chelyabinsk': typeof TransferAstanaChelyabinskRoute
+  '/transfer-astana-karaganda': typeof TransferAstanaKaragandaRoute
+  '/transfer-astana-kokshetau': typeof TransferAstanaKokshetauRoute
+  '/transfer-astana-magnitogorsk': typeof TransferAstanaMagnitogorskRoute
+  '/transfer-astana-omsk': typeof TransferAstanaOmskRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/en/airport': typeof EnAirportRoute
   '/en/contact': typeof EnContactRoute
   '/en/fleet': typeof EnFleetRoute
   '/en/services': typeof EnServicesRoute
+  '/kz/airport': typeof KzAirportRoute
   '/kz/contact': typeof KzContactRoute
   '/kz/fleet': typeof KzFleetRoute
   '/kz/services': typeof KzServicesRoute
+  '/blog/': typeof BlogIndexRoute
   '/en/': typeof EnIndexRoute
   '/kz/': typeof KzIndexRoute
+  '/en/blog/$slug': typeof EnBlogSlugRoute
+  '/kz/blog/$slug': typeof KzBlogSlugRoute
+  '/en/blog/': typeof EnBlogIndexRoute
+  '/kz/blog/': typeof KzBlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/airport': typeof AirportRoute
   '/contact': typeof ContactRoute
+  '/directions': typeof DirectionsRoute
   '/fleet': typeof FleetRoute
   '/services': typeof ServicesRoute
+  '/transfer-astana-barnaul': typeof TransferAstanaBarnaulRoute
+  '/transfer-astana-borovoe': typeof TransferAstanaBorovoeRoute
+  '/transfer-astana-chelyabinsk': typeof TransferAstanaChelyabinskRoute
+  '/transfer-astana-karaganda': typeof TransferAstanaKaragandaRoute
+  '/transfer-astana-kokshetau': typeof TransferAstanaKokshetauRoute
+  '/transfer-astana-magnitogorsk': typeof TransferAstanaMagnitogorskRoute
+  '/transfer-astana-omsk': typeof TransferAstanaOmskRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/en/airport': typeof EnAirportRoute
   '/en/contact': typeof EnContactRoute
   '/en/fleet': typeof EnFleetRoute
   '/en/services': typeof EnServicesRoute
+  '/kz/airport': typeof KzAirportRoute
   '/kz/contact': typeof KzContactRoute
   '/kz/fleet': typeof KzFleetRoute
   '/kz/services': typeof KzServicesRoute
+  '/blog': typeof BlogIndexRoute
   '/en': typeof EnIndexRoute
   '/kz': typeof KzIndexRoute
+  '/en/blog/$slug': typeof EnBlogSlugRoute
+  '/kz/blog/$slug': typeof KzBlogSlugRoute
+  '/en/blog': typeof EnBlogIndexRoute
+  '/kz/blog': typeof KzBlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/airport': typeof AirportRoute
   '/contact': typeof ContactRoute
+  '/directions': typeof DirectionsRoute
   '/fleet': typeof FleetRoute
   '/services': typeof ServicesRoute
+  '/transfer-astana-barnaul': typeof TransferAstanaBarnaulRoute
+  '/transfer-astana-borovoe': typeof TransferAstanaBorovoeRoute
+  '/transfer-astana-chelyabinsk': typeof TransferAstanaChelyabinskRoute
+  '/transfer-astana-karaganda': typeof TransferAstanaKaragandaRoute
+  '/transfer-astana-kokshetau': typeof TransferAstanaKokshetauRoute
+  '/transfer-astana-magnitogorsk': typeof TransferAstanaMagnitogorskRoute
+  '/transfer-astana-omsk': typeof TransferAstanaOmskRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/en/airport': typeof EnAirportRoute
   '/en/contact': typeof EnContactRoute
   '/en/fleet': typeof EnFleetRoute
   '/en/services': typeof EnServicesRoute
+  '/kz/airport': typeof KzAirportRoute
   '/kz/contact': typeof KzContactRoute
   '/kz/fleet': typeof KzFleetRoute
   '/kz/services': typeof KzServicesRoute
+  '/blog/': typeof BlogIndexRoute
   '/en/': typeof EnIndexRoute
   '/kz/': typeof KzIndexRoute
+  '/en/blog/$slug': typeof EnBlogSlugRoute
+  '/kz/blog/$slug': typeof KzBlogSlugRoute
+  '/en/blog/': typeof EnBlogIndexRoute
+  '/kz/blog/': typeof KzBlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/airport'
     | '/contact'
+    | '/directions'
     | '/fleet'
     | '/services'
+    | '/transfer-astana-barnaul'
+    | '/transfer-astana-borovoe'
+    | '/transfer-astana-chelyabinsk'
+    | '/transfer-astana-karaganda'
+    | '/transfer-astana-kokshetau'
+    | '/transfer-astana-magnitogorsk'
+    | '/transfer-astana-omsk'
+    | '/blog/$slug'
+    | '/en/airport'
     | '/en/contact'
     | '/en/fleet'
     | '/en/services'
+    | '/kz/airport'
     | '/kz/contact'
     | '/kz/fleet'
     | '/kz/services'
+    | '/blog/'
     | '/en/'
     | '/kz/'
+    | '/en/blog/$slug'
+    | '/kz/blog/$slug'
+    | '/en/blog/'
+    | '/kz/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/airport'
     | '/contact'
+    | '/directions'
     | '/fleet'
     | '/services'
+    | '/transfer-astana-barnaul'
+    | '/transfer-astana-borovoe'
+    | '/transfer-astana-chelyabinsk'
+    | '/transfer-astana-karaganda'
+    | '/transfer-astana-kokshetau'
+    | '/transfer-astana-magnitogorsk'
+    | '/transfer-astana-omsk'
+    | '/blog/$slug'
+    | '/en/airport'
     | '/en/contact'
     | '/en/fleet'
     | '/en/services'
+    | '/kz/airport'
     | '/kz/contact'
     | '/kz/fleet'
     | '/kz/services'
+    | '/blog'
     | '/en'
     | '/kz'
+    | '/en/blog/$slug'
+    | '/kz/blog/$slug'
+    | '/en/blog'
+    | '/kz/blog'
   id:
     | '__root__'
     | '/'
+    | '/airport'
     | '/contact'
+    | '/directions'
     | '/fleet'
     | '/services'
+    | '/transfer-astana-barnaul'
+    | '/transfer-astana-borovoe'
+    | '/transfer-astana-chelyabinsk'
+    | '/transfer-astana-karaganda'
+    | '/transfer-astana-kokshetau'
+    | '/transfer-astana-magnitogorsk'
+    | '/transfer-astana-omsk'
+    | '/blog/$slug'
+    | '/en/airport'
     | '/en/contact'
     | '/en/fleet'
     | '/en/services'
+    | '/kz/airport'
     | '/kz/contact'
     | '/kz/fleet'
     | '/kz/services'
+    | '/blog/'
     | '/en/'
     | '/kz/'
+    | '/en/blog/$slug'
+    | '/kz/blog/$slug'
+    | '/en/blog/'
+    | '/kz/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AirportRoute: typeof AirportRoute
   ContactRoute: typeof ContactRoute
+  DirectionsRoute: typeof DirectionsRoute
   FleetRoute: typeof FleetRoute
   ServicesRoute: typeof ServicesRoute
+  TransferAstanaBarnaulRoute: typeof TransferAstanaBarnaulRoute
+  TransferAstanaBorovoeRoute: typeof TransferAstanaBorovoeRoute
+  TransferAstanaChelyabinskRoute: typeof TransferAstanaChelyabinskRoute
+  TransferAstanaKaragandaRoute: typeof TransferAstanaKaragandaRoute
+  TransferAstanaKokshetauRoute: typeof TransferAstanaKokshetauRoute
+  TransferAstanaMagnitogorskRoute: typeof TransferAstanaMagnitogorskRoute
+  TransferAstanaOmskRoute: typeof TransferAstanaOmskRoute
+  BlogSlugRoute: typeof BlogSlugRoute
+  EnAirportRoute: typeof EnAirportRoute
   EnContactRoute: typeof EnContactRoute
   EnFleetRoute: typeof EnFleetRoute
   EnServicesRoute: typeof EnServicesRoute
+  KzAirportRoute: typeof KzAirportRoute
   KzContactRoute: typeof KzContactRoute
   KzFleetRoute: typeof KzFleetRoute
   KzServicesRoute: typeof KzServicesRoute
+  BlogIndexRoute: typeof BlogIndexRoute
   EnIndexRoute: typeof EnIndexRoute
   KzIndexRoute: typeof KzIndexRoute
+  EnBlogSlugRoute: typeof EnBlogSlugRoute
+  KzBlogSlugRoute: typeof KzBlogSlugRoute
+  EnBlogIndexRoute: typeof EnBlogIndexRoute
+  KzBlogIndexRoute: typeof KzBlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/transfer-astana-omsk': {
+      id: '/transfer-astana-omsk'
+      path: '/transfer-astana-omsk'
+      fullPath: '/transfer-astana-omsk'
+      preLoaderRoute: typeof TransferAstanaOmskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/transfer-astana-magnitogorsk': {
+      id: '/transfer-astana-magnitogorsk'
+      path: '/transfer-astana-magnitogorsk'
+      fullPath: '/transfer-astana-magnitogorsk'
+      preLoaderRoute: typeof TransferAstanaMagnitogorskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/transfer-astana-kokshetau': {
+      id: '/transfer-astana-kokshetau'
+      path: '/transfer-astana-kokshetau'
+      fullPath: '/transfer-astana-kokshetau'
+      preLoaderRoute: typeof TransferAstanaKokshetauRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/transfer-astana-karaganda': {
+      id: '/transfer-astana-karaganda'
+      path: '/transfer-astana-karaganda'
+      fullPath: '/transfer-astana-karaganda'
+      preLoaderRoute: typeof TransferAstanaKaragandaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/transfer-astana-chelyabinsk': {
+      id: '/transfer-astana-chelyabinsk'
+      path: '/transfer-astana-chelyabinsk'
+      fullPath: '/transfer-astana-chelyabinsk'
+      preLoaderRoute: typeof TransferAstanaChelyabinskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/transfer-astana-borovoe': {
+      id: '/transfer-astana-borovoe'
+      path: '/transfer-astana-borovoe'
+      fullPath: '/transfer-astana-borovoe'
+      preLoaderRoute: typeof TransferAstanaBorovoeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/transfer-astana-barnaul': {
+      id: '/transfer-astana-barnaul'
+      path: '/transfer-astana-barnaul'
+      fullPath: '/transfer-astana-barnaul'
+      preLoaderRoute: typeof TransferAstanaBarnaulRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services': {
       id: '/services'
       path: '/services'
@@ -202,11 +474,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FleetRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/directions': {
+      id: '/directions'
+      path: '/directions'
+      fullPath: '/directions'
+      preLoaderRoute: typeof DirectionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/airport': {
+      id: '/airport'
+      path: '/airport'
+      fullPath: '/airport'
+      preLoaderRoute: typeof AirportRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -230,6 +516,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/kz/services': {
       id: '/kz/services'
       path: '/kz/services'
@@ -249,6 +542,13 @@ declare module '@tanstack/react-router' {
       path: '/kz/contact'
       fullPath: '/kz/contact'
       preLoaderRoute: typeof KzContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kz/airport': {
+      id: '/kz/airport'
+      path: '/kz/airport'
+      fullPath: '/kz/airport'
+      preLoaderRoute: typeof KzAirportRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/en/services': {
@@ -272,22 +572,81 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/en/airport': {
+      id: '/en/airport'
+      path: '/en/airport'
+      fullPath: '/en/airport'
+      preLoaderRoute: typeof EnAirportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kz/blog/': {
+      id: '/kz/blog/'
+      path: '/kz/blog'
+      fullPath: '/kz/blog/'
+      preLoaderRoute: typeof KzBlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/blog/': {
+      id: '/en/blog/'
+      path: '/en/blog'
+      fullPath: '/en/blog/'
+      preLoaderRoute: typeof EnBlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kz/blog/$slug': {
+      id: '/kz/blog/$slug'
+      path: '/kz/blog/$slug'
+      fullPath: '/kz/blog/$slug'
+      preLoaderRoute: typeof KzBlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/blog/$slug': {
+      id: '/en/blog/$slug'
+      path: '/en/blog/$slug'
+      fullPath: '/en/blog/$slug'
+      preLoaderRoute: typeof EnBlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AirportRoute: AirportRoute,
   ContactRoute: ContactRoute,
+  DirectionsRoute: DirectionsRoute,
   FleetRoute: FleetRoute,
   ServicesRoute: ServicesRoute,
+  TransferAstanaBarnaulRoute: TransferAstanaBarnaulRoute,
+  TransferAstanaBorovoeRoute: TransferAstanaBorovoeRoute,
+  TransferAstanaChelyabinskRoute: TransferAstanaChelyabinskRoute,
+  TransferAstanaKaragandaRoute: TransferAstanaKaragandaRoute,
+  TransferAstanaKokshetauRoute: TransferAstanaKokshetauRoute,
+  TransferAstanaMagnitogorskRoute: TransferAstanaMagnitogorskRoute,
+  TransferAstanaOmskRoute: TransferAstanaOmskRoute,
+  BlogSlugRoute: BlogSlugRoute,
+  EnAirportRoute: EnAirportRoute,
   EnContactRoute: EnContactRoute,
   EnFleetRoute: EnFleetRoute,
   EnServicesRoute: EnServicesRoute,
+  KzAirportRoute: KzAirportRoute,
   KzContactRoute: KzContactRoute,
   KzFleetRoute: KzFleetRoute,
   KzServicesRoute: KzServicesRoute,
+  BlogIndexRoute: BlogIndexRoute,
   EnIndexRoute: EnIndexRoute,
   KzIndexRoute: KzIndexRoute,
+  EnBlogSlugRoute: EnBlogSlugRoute,
+  KzBlogSlugRoute: KzBlogSlugRoute,
+  EnBlogIndexRoute: EnBlogIndexRoute,
+  KzBlogIndexRoute: KzBlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

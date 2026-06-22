@@ -12,7 +12,6 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-
 export function Booking() {
   const { t, locale } = useLocale();
   const dfLocale = locale === "ru" ? ruLocale : locale === "kz" ? kkLocale : enUS;
@@ -45,7 +44,9 @@ export function Booking() {
       `${t.booking.waService}: ${service}`,
       `${t.booking.waDate}: ${dateStr}`,
       name && `${t.booking.waName}: ${name}`,
-    ].filter(Boolean).join("\n");
+    ]
+      .filter(Boolean)
+      .join("\n");
     window.open(wa(lines), "_blank", "noopener,noreferrer");
     setSubmitted(true);
   };
@@ -64,7 +65,9 @@ export function Booking() {
       <div className="relative max-w-5xl mx-auto px-5 md:px-10">
         <Reveal>
           <div className="text-center mb-10 md:mb-14">
-            <div className="text-[10px] uppercase tracking-[0.35em] text-gold mb-4">{t.booking.eyebrow}</div>
+            <div className="text-[10px] uppercase tracking-[0.35em] text-gold mb-4">
+              {t.booking.eyebrow}
+            </div>
             <h2 className="font-display text-3xl md:text-5xl leading-[1.05]">
               {t.booking.title.split(" ").slice(0, -2).join(" ")}{" "}
               <span className="gradient-gold-text italic">
@@ -82,15 +85,11 @@ export function Booking() {
               <div className="flex justify-center mb-6">
                 <CheckCircle2 className="w-16 h-16 text-gold" strokeWidth={1.2} />
               </div>
-              <h3 className="font-display text-3xl md:text-4xl mb-4">
-                {t.booking.successTitle}
-              </h3>
+              <h3 className="font-display text-3xl md:text-4xl mb-4">{t.booking.successTitle}</h3>
               <p className="text-foreground/70 text-lg max-w-md mx-auto mb-2">
                 {t.booking.successSub}
               </p>
-              <p className="text-foreground/50 text-sm mb-10">
-                {t.booking.successNote}
-              </p>
+              <p className="text-foreground/50 text-sm mb-10">{t.booking.successNote}</p>
               <button
                 onClick={handleReset}
                 className="px-8 py-3 rounded-full border border-gold/40 text-sm text-gold hover:border-gold hover:bg-gold/5 transition-colors"
@@ -123,14 +122,21 @@ export function Booking() {
                         )}
                       >
                         <CalendarIcon className="mr-2 h-4 w-4 text-gold" />
-                        {date ? format(date, "PPP", { locale: dfLocale }) : <span>{t.booking.pickDate}</span>}
+                        {date ? (
+                          format(date, "PPP", { locale: dfLocale })
+                        ) : (
+                          <span>{t.booking.pickDate}</span>
+                        )}
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0" align="start">
                       <Calendar
                         mode="single"
                         selected={date}
-                        onSelect={(d) => { setDate(d); setErrors((prev) => ({ ...prev, date: undefined })); }}
+                        onSelect={(d) => {
+                          setDate(d);
+                          setErrors((prev) => ({ ...prev, date: undefined }));
+                        }}
                         disabled={(d) => d < new Date(new Date().setHours(0, 0, 0, 0))}
                         initialFocus
                         className={cn("p-3 pointer-events-auto")}
@@ -142,14 +148,18 @@ export function Booking() {
 
                 {/* Service */}
                 <div className="space-y-2">
-                  <Label className="text-xs uppercase tracking-[0.2em] text-foreground/60">{t.booking.serviceLabel}</Label>
+                  <Label className="text-xs uppercase tracking-[0.2em] text-foreground/60">
+                    {t.booking.serviceLabel}
+                  </Label>
                   <select
                     value={service}
                     onChange={(e) => setService(e.target.value)}
                     className="w-full h-11 rounded-md border border-gold/30 bg-background/50 px-3 text-sm hover:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
                   >
                     {t.booking.services.map((s) => (
-                      <option key={s} value={s} className="bg-background">{s}</option>
+                      <option key={s} value={s} className="bg-background">
+                        {s}
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -161,12 +171,17 @@ export function Booking() {
                   </Label>
                   <Input
                     value={name}
-                    onChange={(e) => { setName(e.target.value); setErrors((prev) => ({ ...prev, name: undefined })); }}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                      setErrors((prev) => ({ ...prev, name: undefined }));
+                    }}
                     placeholder={t.booking.namePh}
                     maxLength={80}
                     className={cn(
                       "h-11 bg-background/50",
-                      errors.name ? "border-red-500 focus-visible:ring-red-500" : "border-gold/30 hover:border-gold focus-visible:ring-gold"
+                      errors.name
+                        ? "border-red-500 focus-visible:ring-red-500"
+                        : "border-gold/30 hover:border-gold focus-visible:ring-gold",
                     )}
                   />
                   {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}

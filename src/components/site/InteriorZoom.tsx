@@ -27,14 +27,18 @@ export function InteriorZoom() {
       <div className="sticky top-0 h-screen overflow-hidden">
         <img
           src={interior}
-          alt="Interior"
+          width={1400}
+          height={1050}
+          alt="Салон Hyundai Staria LUXE для VIP-трансфера в Астане"
           className="absolute inset-0 w-full h-full object-cover will-change-transform"
           style={{ transform: `scale(${1 + p * 0.4})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background/85 via-background/40 to-background/30" />
         <img
           src={detail}
-          alt="Detail"
+          width={1400}
+          height={1050}
+          alt="Деталь интерьера Hyundai Staria LUXE"
           className="hidden md:block absolute right-10 bottom-10 w-72 lg:w-96 aspect-[3/2] object-cover rounded-xl border border-gold/30 shadow-luxe will-change-transform"
           style={{
             transform: `translateY(${(1 - p) * 80}px)`,
@@ -43,7 +47,9 @@ export function InteriorZoom() {
         />
         <div className="relative h-full max-w-7xl mx-auto px-5 md:px-10 flex items-center">
           <div className="max-w-xl">
-            <div className="text-[10px] uppercase tracking-[0.35em] text-gold mb-4">{t.interior.eyebrow}</div>
+            <div className="text-[10px] uppercase tracking-[0.35em] text-gold mb-4">
+              {t.interior.eyebrow}
+            </div>
             <h2 className="font-display text-4xl md:text-6xl leading-[1.05]">{t.interior.title}</h2>
             <p className="mt-6 text-foreground/70 text-lg">{t.interior.sub}</p>
           </div>

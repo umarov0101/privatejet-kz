@@ -5,7 +5,7 @@ import { seo } from "@/lib/site";
 export const Route = createFileRoute("/")({
   head: () =>
     seo({
-      title: "Private Jet KZ — Аренда трансфера в Астане | VIP минивэн Hyundai Staria LUXE",
+      title: "VIP-трансфер в Астане на Hyundai Staria | Private Jet KZ",
       description:
         "VIP-трансфер на Hyundai Staria LUXE в Астане и по всему Казахстану. Трансфер из аэропорта NQZ, встреча делегаций, почасовая аренда, междугородние поездки. 10 лет опыта. +7 708 938 08 00.",
       keywords:

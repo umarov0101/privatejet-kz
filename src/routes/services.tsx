@@ -1,74 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ServicesPage } from "@/pages/ServicesPage";
 import { seo } from "@/lib/site";
-
-const SERVICES_JSON_LD = JSON.stringify([
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "VIP трансфер по Астане",
-    "provider": { "@type": "LocalBusiness", "name": "Private Jet KZ" },
-    "areaServed": { "@type": "City", "name": "Астана" },
-    "offers": {
-      "@type": "Offer",
-      "price": "25000",
-      "priceCurrency": "KZT",
-      "priceSpecification": { "@type": "UnitPriceSpecification", "price": "25000", "priceCurrency": "KZT", "unitText": "поездка" },
-    },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Почасовая аренда Hyundai Staria LUXE с водителем",
-    "provider": { "@type": "LocalBusiness", "name": "Private Jet KZ" },
-    "areaServed": { "@type": "City", "name": "Астана" },
-    "offers": {
-      "@type": "Offer",
-      "price": "15000",
-      "priceCurrency": "KZT",
-      "priceSpecification": { "@type": "UnitPriceSpecification", "price": "15000", "priceCurrency": "KZT", "unitText": "час" },
-    },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Аренда Hyundai Staria LUXE на полный день",
-    "provider": { "@type": "LocalBusiness", "name": "Private Jet KZ" },
-    "areaServed": { "@type": "City", "name": "Астана" },
-    "offers": { "@type": "Offer", "price": "150000", "priceCurrency": "KZT" },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Межгородной VIP-трансфер из Астаны",
-    "provider": { "@type": "LocalBusiness", "name": "Private Jet KZ" },
-    "areaServed": { "@type": "Country", "name": "Казахстан" },
-    "offers": {
-      "@type": "Offer",
-      "price": "200",
-      "priceCurrency": "KZT",
-      "priceSpecification": { "@type": "UnitPriceSpecification", "price": "200", "priceCurrency": "KZT", "unitText": "км" },
-    },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Аренда Hyundai Staria без водителя в Астане (8–11 мест)",
-    "provider": { "@type": "LocalBusiness", "name": "Private Jet KZ" },
-    "areaServed": { "@type": "City", "name": "Астана" },
-    "offers": {
-      "@type": "Offer",
-      "price": "69000",
-      "priceCurrency": "KZT",
-      "priceSpecification": { "@type": "UnitPriceSpecification", "price": "69000", "priceCurrency": "KZT", "unitText": "сутки" },
-    },
-  },
-]);
+import { servicesLd, breadcrumbLd } from "@/lib/schema";
 
 export const Route = createFileRoute("/services")({
   head: () => {
     const base = seo({
-      title: "Услуги VIP-трансфера в Астане — Аренда Hyundai Staria LUXE | Private Jet KZ",
+      title: "Услуги VIP-трансфера Hyundai Staria | Private Jet KZ",
       description:
         "VIP-трансфер в Астане на Hyundai Staria LUXE: трансфер из аэропорта NQZ, почасовая аренда, аренда на полный день, межгород, встреча делегаций. Цены от 15 000 тенге.",
       keywords:
@@ -81,7 +19,10 @@ export const Route = createFileRoute("/services")({
     });
     return {
       ...base,
-      scripts: [{ type: "application/ld+json", children: SERVICES_JSON_LD }],
+      scripts: [
+        { type: "application/ld+json", children: servicesLd("ru") },
+        { type: "application/ld+json", children: breadcrumbLd("ru", "services") },
+      ],
     };
   },
   component: ServicesPage,

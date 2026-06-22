@@ -83,18 +83,38 @@ export function AstanaTour() {
   }, [updateProgress]);
 
   return (
-    <section ref={sectionRef} className="relative bg-background" style={{ height: `${stops.length * 90}svh` }}>
+    <section
+      ref={sectionRef}
+      className="relative bg-background"
+      style={{ height: `${stops.length * 90}svh` }}
+    >
       <div className="sticky top-0 overflow-hidden" style={{ height: "100svh" }}>
         {/* Skyline backdrop with parallax */}
-        <div ref={skylineRef} className="absolute inset-0 will-change-transform" style={{ transform: "translateX(0%) scale(1.1)" }}>
-          <img src={skyline} alt="" aria-hidden className="w-full h-full object-cover opacity-50" loading="lazy" />
+        <div
+          ref={skylineRef}
+          className="absolute inset-0 will-change-transform"
+          style={{ transform: "translateX(0%) scale(1.1)" }}
+        >
+          <img
+            src={skyline}
+            width={1400}
+            height={933}
+            alt=""
+            aria-hidden
+            className="w-full h-full object-cover opacity-50"
+            loading="lazy"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/30 to-background" />
         </div>
 
         {/* Header */}
         <div className="relative max-w-7xl mx-auto px-5 md:px-10 pt-12 md:pt-20">
-          <div className="text-[10px] uppercase tracking-[0.35em] text-gold mb-3">{head.eyebrow}</div>
-          <h2 className="font-display text-4xl md:text-6xl leading-[1.05] max-w-3xl">{head.title}</h2>
+          <div className="text-[10px] uppercase tracking-[0.35em] text-gold mb-3">
+            {head.eyebrow}
+          </div>
+          <h2 className="font-display text-4xl md:text-6xl leading-[1.05] max-w-3xl">
+            {head.title}
+          </h2>
         </div>
 
         {/* Horizontal track */}
@@ -135,12 +155,23 @@ export function AstanaTour() {
             maxWidth: 540,
           }}
         >
-          <img src={staria} alt="" aria-hidden className="w-full h-auto opacity-80 drop-shadow-[0_30px_40px_rgba(0,0,0,0.7)]" />
+          <img
+            src={staria}
+            width={1536}
+            height={1024}
+            alt=""
+            aria-hidden
+            className="w-full h-auto opacity-80 drop-shadow-[0_30px_40px_rgba(0,0,0,0.7)]"
+          />
         </div>
 
         {/* Progress bar */}
         <div className="absolute top-0 left-0 right-0 h-px bg-gold/10">
-          <div ref={progressBarRef} className="h-full bg-gradient-to-r from-[var(--gold)] to-[var(--gold-bright)]" style={{ width: "0%" }} />
+          <div
+            ref={progressBarRef}
+            className="h-full bg-gradient-to-r from-[var(--gold)] to-[var(--gold-bright)]"
+            style={{ width: "0%" }}
+          />
         </div>
       </div>
     </section>

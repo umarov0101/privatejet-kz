@@ -11,10 +11,10 @@ export function AirportPage() {
   const faqSchema = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": p.faq.map((item) => ({
+    mainEntity: p.faq.map((item) => ({
       "@type": "Question",
-      "name": item.q,
-      "acceptedAnswer": { "@type": "Answer", "text": item.a },
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
     })),
   });
 
@@ -27,7 +27,9 @@ export function AirportPage() {
         <div className="max-w-7xl mx-auto px-5 md:px-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <Reveal>
-              <div className="text-[10px] uppercase tracking-[0.35em] text-gold mb-4">{p.eyebrow}</div>
+              <div className="text-[10px] uppercase tracking-[0.35em] text-gold mb-4">
+                {p.eyebrow}
+              </div>
               <h1 className="font-display text-5xl md:text-7xl leading-[1.02]">{p.h1}</h1>
               <p className="mt-6 max-w-xl text-foreground/70 text-lg leading-relaxed">{p.sub}</p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -49,6 +51,8 @@ export function AirportPage() {
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-gold/20 shadow-luxe">
                 <img
                   src={airport}
+                  width={1536}
+                  height={1024}
                   alt="Встреча в аэропорту NQZ Астана — Hyundai Staria LUXE"
                   className="w-full h-full object-cover"
                 />

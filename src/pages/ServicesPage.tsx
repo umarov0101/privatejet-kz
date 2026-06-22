@@ -11,7 +11,9 @@ export function ServicesPage() {
       <section className="pt-32 md:pt-44 pb-16 bg-background">
         <div className="max-w-7xl mx-auto px-5 md:px-10">
           <Reveal>
-            <div className="text-[10px] uppercase tracking-[0.35em] text-gold mb-4">{t.nav.services}</div>
+            <div className="text-[10px] uppercase tracking-[0.35em] text-gold mb-4">
+              {t.nav.services}
+            </div>
             <h1 className="font-display text-5xl md:text-7xl leading-[1.02]">{s.title}</h1>
             <p className="mt-6 max-w-xl text-foreground/70 text-lg">{s.sub}</p>
           </Reveal>
@@ -42,7 +44,8 @@ export function ServicesPage() {
                   rel="noopener noreferrer"
                   className="mt-7 inline-flex items-center gap-2 text-sm text-gold border-b border-gold/40 hover:border-gold pb-1 transition-colors"
                 >
-                  {t.tariffs.book} <span className="transition-transform group-hover:translate-x-1">→</span>
+                  {t.tariffs.book}{" "}
+                  <span className="transition-transform group-hover:translate-x-1">→</span>
                 </a>
               </div>
             </Reveal>

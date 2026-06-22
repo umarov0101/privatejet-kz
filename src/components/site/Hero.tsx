@@ -1,6 +1,8 @@
 import { useLocale } from "@/i18n/context";
 import { wa } from "@/i18n/dictionaries";
 import heroImg from "@/assets/hero-staria-astana.webp";
+import hero768 from "@/assets/hero-staria-astana-768.webp";
+import hero1152 from "@/assets/hero-staria-astana-1152.webp";
 import { useEffect, useRef, useState } from "react";
 import { MagneticButton } from "./MagneticButton";
 
@@ -30,6 +32,10 @@ export function Hero() {
       >
         <img
           src={heroImg}
+          srcSet={`${hero768} 768w, ${hero1152} 1152w, ${heroImg} 1536w`}
+          sizes="100vw"
+          width={1536}
+          height={1024}
           alt="Hyundai Staria LUXE для VIP-трансфера в Астане"
           className="w-full h-full object-cover"
           fetchPriority="high"

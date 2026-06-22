@@ -1,15 +1,21 @@
+import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { localeFromPath } from "@/i18n/path";
+import { ORGANIZATION_GRAPH } from "@/lib/schema";
 
 import appCss from "../styles.css?url";
 import heroImg from "@/assets/hero-staria-astana.webp";
+import hero768 from "@/assets/hero-staria-astana-768.webp";
+import hero1152 from "@/assets/hero-staria-astana-1152.webp";
 import { LocaleProvider } from "@/i18n/context";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
@@ -21,7 +27,10 @@ function NotFoundComponent() {
       <div className="max-w-md text-center">
         <h1 className="font-display text-7xl gradient-gold-text">404</h1>
         <p className="mt-4 text-foreground/70">Страница не найдена</p>
-        <Link to="/" className="mt-6 inline-block px-6 py-3 rounded-full bg-gold text-background text-sm">
+        <Link
+          to="/"
+          className="mt-6 inline-block px-6 py-3 rounded-full bg-gold text-background text-sm"
+        >
           На главную
         </Link>
       </div>
@@ -37,7 +46,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
       <div className="max-w-md text-center">
         <h1 className="font-display text-2xl">Что-то пошло не так</h1>
         <button
-          onClick={() => { router.invalidate(); reset(); }}
+          onClick={() => {
+            router.invalidate();
+            reset();
+          }}
           className="mt-6 px-6 py-3 rounded-full bg-gold text-background text-sm"
         >
           Попробовать снова
@@ -54,99 +66,17 @@ const OG_IMAGE = `${SITE_URL}/og-cover.jpg`;
 const METRIKA_ID = 109432829;
 const METRIKA_SNIPPET = `(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js?id=${METRIKA_ID}","ym");ym(${METRIKA_ID},"init",{ssr:true,webvisor:true,clickmap:true,accurateTrackBounce:true,trackLinks:true});`;
 
-const JSON_LD = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Private Jet KZ",
-  "description": "VIP-трансфер с собственным автопарком в Астане на Hyundai Staria LUXE. Встреча делегаций, трансфер из аэропорта NQZ, почасовая аренда, междугородние поездки от 200 ₸/км.",
-  "url": SITE_URL,
-  "telephone": "+77089380800",
-  "priceRange": "$$$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "ул. Толе би, 25/1",
-    "addressLocality": "Астана",
-    "addressRegion": "Акмолинская область",
-    "postalCode": "010000",
-    "addressCountry": "KZ",
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": "51.1801",
-    "longitude": "71.4460",
-  },
-  "openingHours": "Mo-Su 00:00-23:59",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+77089380800",
-    "contactType": "reservations",
-    "availableLanguage": ["Russian", "Kazakh", "English"],
-  },
-  "sameAs": [
-    "https://wa.me/77089380800",
-    "https://2gis.kz/astana/firm/privatejetkz",
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "VIP трансфер Астана",
-    "itemListElement": [
-      { "@type": "Offer", "name": "VIP трансфер Астана", "price": "25000", "priceCurrency": "KZT" },
-      { "@type": "Offer", "name": "Аренда по часам", "price": "15000", "priceCurrency": "KZT" },
-      { "@type": "Offer", "name": "Междугородние поездки (Боровое, Караганда)", "price": "200", "priceCurrency": "KZT" },
-      { "@type": "Offer", "name": "Аренда Hyundai Staria без водителя (сутки)", "price": "69000", "priceCurrency": "KZT" },
-    ],
-  },
-  "serviceArea": {
-    "@type": "GeoCircle",
-    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "51.1801", "longitude": "71.4460" },
-    "geoRadius": "500000",
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "6",
-    "bestRating": "5",
-    "worstRating": "5",
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Айгерим Сагатова" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Заказывали Staria на 3 дня в Боровое со съёмочной группой. Водитель Ербол приехал минута в минуту, помог с оборудованием, дорогой — тишина, можно было работать в ноутбуке. По возвращении машину подали к самому подъезду отеля. Уровень — как у частного джета, только на земле.",
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Дмитрий Власов" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Нужно было доехать до Омска без пересадок и нервов. Согласовали маршрут в WhatsApp за 10 минут. Чистый салон, две остановки в пути по моему запросу. Обратно — та же машина, тот же водитель. Большая редкость в Казахстане.",
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Алихан Бектуров" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Прилетаю в Астану 2-3 раза в месяц, всегда заказываю Private Jet KZ. Машина уже стоит у выхода NQZ с табличкой, бутылка воды в держателе, маршрут в офис согласован заранее. За 2 года — ни одного опоздания.",
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Олег Краснов" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Принимали партнёров из ОАЭ — нужны были 3 одинаковые машины. Получили ровно то, что обещали: 3 чёрные Staria LUXE, вежливые водители, координатор на связи. Гости были в восторге от салона.",
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Жанна Турлыбекова" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Заказала на полный день: 4 встречи, обед, ужин. Водитель Санжар знал город идеально, между встречами в машине было удобно работать и созваниваться. Ни одной задержки. Оплата прозрачная, без сюрпризов.",
-    },
-    {
-      "@type": "Review",
-      "author": { "@type": "Person", "name": "Тимур Ахметов" },
-      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "reviewBody": "Брал две Staria на свадьбу для родителей и почётных гостей. Машины подъехали украшенные по нашему запросу, водители вежливые, помогли пожилым гостям сесть. Фото на фоне авто — просто огонь. Спасибо команде!",
-    },
-  ],
-});
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
+
+// Meta (Facebook) Pixel — для ретаргетинга/таргета
+const META_PIXEL_ID = "1726212895062213";
+const META_PIXEL_SNIPPET = `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${META_PIXEL_ID}');fbq('track','PageView');`;
+
+const JSON_LD = ORGANIZATION_GRAPH;
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -169,12 +99,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "Private Jet KZ — Аренда трансфера в Астане" },
       {
         name: "twitter:description",
-        content: "VIP-трансфер на Hyundai Staria LUXE в Астане. Трансфер из аэропорта NQZ, встреча делегаций, почасовая аренда. WhatsApp +7 708 938 08 00.",
+        content:
+          "VIP-трансфер на Hyundai Staria LUXE в Астане. Трансфер из аэропорта NQZ, встреча делегаций, почасовая аренда. WhatsApp +7 708 938 08 00.",
       },
       { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
-      { rel: "preload", href: heroImg, as: "image", type: "image/webp" },
+      {
+        rel: "preload",
+        as: "image",
+        href: hero768,
+        imagesrcset: `${hero768} 768w, ${hero1152} 1152w, ${heroImg} 1536w`,
+        imagesizes: "100vw",
+        type: "image/webp",
+      },
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
@@ -182,6 +120,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     scripts: [
       { type: "application/ld+json", children: JSON_LD },
       { children: METRIKA_SNIPPET },
+      { children: META_PIXEL_SNIPPET },
     ],
   }),
   shellComponent: RootShell,
@@ -191,16 +130,53 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: React.ReactNode }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const locale = localeFromPath(pathname);
+  const lang = locale === "kz" ? "kk" : locale;
   return (
-    <html lang="ru">
-      <head><HeadContent /></head>
-      <body><div className="dark">{children}</div><Scripts /></body>
+    <html lang={lang}>
+      <head>
+        <HeadContent />
+      </head>
+      <body>
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+            alt=""
+          />
+        </noscript>
+        <div className="dark">{children}</div>
+        <Scripts />
+      </body>
     </html>
   );
 }
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  // Meta Pixel: клики по WhatsApp = Lead, по телефону = Contact (делегирование, ловит все ссылки)
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      const el = e.target instanceof Element ? e.target : null;
+      const a = el?.closest("a");
+      if (!a) return;
+      const href = a.getAttribute("href") ?? "";
+      const fbq = window.fbq;
+      if (typeof fbq !== "function") return;
+      if (href.includes("wa.me") || href.includes("api.whatsapp.com")) {
+        fbq("track", "Lead", { content_name: "WhatsApp" });
+      } else if (href.startsWith("tel:")) {
+        fbq("track", "Contact", { content_name: "Phone" });
+      }
+    };
+    document.addEventListener("click", onClick, true);
+    return () => document.removeEventListener("click", onClick, true);
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <LocaleProvider>

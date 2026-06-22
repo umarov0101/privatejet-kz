@@ -31,7 +31,9 @@ export function Reviews() {
                   <p className="mt-4 text-foreground/85 text-[15px] leading-relaxed">{it.text}</p>
                   <div className="mt-6 pt-5 border-t border-gold/10">
                     <div className="font-display text-lg">{it.name}</div>
-                    <div className="text-xs uppercase tracking-[0.18em] text-gold/80 mt-1">{it.role}</div>
+                    <div className="text-xs uppercase tracking-[0.18em] text-gold/80 mt-1">
+                      {it.role}
+                    </div>
                   </div>
                 </div>
               </article>

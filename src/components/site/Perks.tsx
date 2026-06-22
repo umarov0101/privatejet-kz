@@ -13,7 +13,11 @@ export function Perks() {
         </Reveal>
         <div className="mt-10 md:mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gold/10">
           {t.perks.items.map((it, i) => (
-            <Reveal key={it.t} delay={i * 80} className="bg-[var(--surface)] p-8 md:p-10 group hover:bg-background/40 transition-colors">
+            <Reveal
+              key={it.t}
+              delay={i * 80}
+              className="bg-[var(--surface)] p-8 md:p-10 group hover:bg-background/40 transition-colors"
+            >
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center text-gold text-sm font-display group-hover:bg-gold group-hover:text-background transition-colors">
                   {String(i + 1).padStart(2, "0")}

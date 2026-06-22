@@ -14,6 +14,8 @@ export function Footer() {
     { to: "/", label: t.nav.home },
     { to: "/fleet", label: t.nav.fleet },
     { to: "/services", label: t.nav.services },
+    { to: "/directions", label: t.nav.directions },
+    { to: "/blog", label: t.nav.blog },
     { to: "/contact", label: t.nav.contact },
   ] as const;
   return (
@@ -21,7 +23,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-5 md:px-10 py-14 grid md:grid-cols-3 gap-10">
         <div>
           <div className="flex items-center gap-3">
-            <img src={logo} alt="Private Jet KZ" className="h-14 w-auto" />
+            <img src={logo} width={200} height={200} alt="Private Jet KZ" className="h-14 w-auto" />
             <div className="font-display text-2xl">
               Private<span className="gradient-gold-text"> Jet KZ</span>
             </div>
@@ -35,7 +37,10 @@ export function Footer() {
           <ul className="space-y-2 text-sm">
             {nav.map((n) => (
               <li key={n.to}>
-                <Link to={withLocale(locale, n.to)} className="text-foreground/80 hover:text-gold transition-colors">
+                <Link
+                  to={n.to === "/directions" ? n.to : withLocale(locale, n.to)}
+                  className="text-foreground/80 hover:text-gold transition-colors"
+                >
                   {n.label}
                 </Link>
               </li>
@@ -44,7 +49,10 @@ export function Footer() {
         </div>
         <div>
           <div className="text-xs uppercase tracking-[0.25em] text-gold mb-4">{t.nav.contact}</div>
-          <a href={`tel:${TEL}`} className="block text-lg font-display hover:text-gold transition-colors">
+          <a
+            href={`tel:${TEL}`}
+            className="block text-lg font-display hover:text-gold transition-colors"
+          >
             {PHONE}
           </a>
           <a
@@ -76,7 +84,10 @@ export function Footer() {
             </a>
           </div>
           <div className="mt-4 space-y-1 text-sm text-muted-foreground">
-            <p><span className="text-foreground/50">Режим работы · </span>{t.footer.hours}</p>
+            <p>
+              <span className="text-foreground/50">Режим работы · </span>
+              {t.footer.hours}
+            </p>
             <p>{t.footer.city}</p>
             <p>{t.footer.address}</p>
           </div>

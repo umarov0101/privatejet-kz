@@ -10,6 +10,8 @@ export function FinalCTA() {
     <section className="relative py-14 md:py-20 overflow-hidden">
       <img
         src={skyline}
+        width={1400}
+        height={933}
         alt=""
         aria-hidden
         className="absolute inset-0 w-full h-full object-cover opacity-30"
@@ -20,7 +22,9 @@ export function FinalCTA() {
         <Reveal>
           <h2 className="font-display text-5xl md:text-7xl leading-[1.02]">
             {t.finalCta.title.split(" ").slice(0, -1).join(" ")}{" "}
-            <span className="gradient-gold-text italic">{t.finalCta.title.split(" ").slice(-1)}</span>
+            <span className="gradient-gold-text italic">
+              {t.finalCta.title.split(" ").slice(-1)}
+            </span>
           </h2>
         </Reveal>
         <Reveal delay={200}>

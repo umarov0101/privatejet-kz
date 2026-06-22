@@ -88,13 +88,16 @@ function TariffCard({
             "radial-gradient(circle at var(--x,50%) var(--y,50%), oklch(0.82 0.12 85 / 0.18), transparent 60%)",
         }}
       />
-      <div className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+      <div
+        className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{ boxShadow: "inset 0 0 0 1px oklch(0.82 0.12 85 / 0.5)" }}
       />
 
       <div className="relative">
         <div className="text-xs uppercase tracking-[0.25em] text-gold">{item.name}</div>
-        <div className={`mt-5 ${compact ? "text-3xl md:text-4xl" : "text-5xl md:text-6xl"} font-display leading-none`}>
+        <div
+          className={`mt-5 ${compact ? "text-3xl md:text-4xl" : "text-5xl md:text-6xl"} font-display leading-none`}
+        >
           {number !== null ? (
             <>
               <span className="text-xs uppercase tracking-[0.2em] text-foreground/60 mr-2 align-middle">
@@ -106,10 +109,10 @@ function TariffCard({
             <span className="gradient-gold-text italic">{item.price}</span>
           )}
         </div>
-        {item.unit && (
-          <div className="mt-2 text-sm text-foreground/60">{item.unit}</div>
-        )}
-        <p className={`mt-5 text-sm text-foreground/70 leading-relaxed ${compact ? "" : "min-h-[5rem]"}`}>
+        {item.unit && <div className="mt-2 text-sm text-foreground/60">{item.unit}</div>}
+        <p
+          className={`mt-5 text-sm text-foreground/70 leading-relaxed ${compact ? "" : "min-h-[5rem]"}`}
+        >
           {item.desc}
         </p>
         <a

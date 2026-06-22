@@ -31,7 +31,9 @@ export function WhoWeAre() {
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
         <div className="max-w-7xl mx-auto w-full px-5 md:px-10 grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="text-[10px] uppercase tracking-[0.35em] text-gold mb-4">{t.who.eyebrow}</div>
+            <div className="text-[10px] uppercase tracking-[0.35em] text-gold mb-4">
+              {t.who.eyebrow}
+            </div>
             <h2 className="font-display text-4xl md:text-6xl leading-[1.05]">{t.who.title}</h2>
             <p className="mt-6 text-foreground/75 text-base md:text-lg max-w-md">{t.who.p1}</p>
             <p className="mt-4 text-foreground/60 text-base max-w-md">{t.who.p2}</p>
@@ -46,7 +48,9 @@ export function WhoWeAre() {
             {/* Interior backdrop (revealed when door slides) */}
             <img
               src={interior}
-              alt="Interior captain seats"
+              width={1400}
+              height={1050}
+              alt="Капитанские кресла в салоне Hyundai Staria LUXE"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div
@@ -60,7 +64,9 @@ export function WhoWeAre() {
             {/* Door slides right */}
             <img
               src={sideOpen}
-              alt="Staria side door opening"
+              width={1536}
+              height={1024}
+              alt="Hyundai Staria LUXE с открытой боковой дверью"
               className="absolute inset-0 w-full h-full object-cover will-change-transform"
               style={{
                 transform: `translateX(${doorShift * 115}%)`,
