@@ -137,6 +137,14 @@ export default {
       });
     }
 
+    // Google Search Console verification (200 по точному .html, без 307-редиректа)
+    if (url.pathname === "/google1185e793d2c3b02c.html") {
+      return new Response("google-site-verification: google1185e793d2c3b02c.html\n", {
+        status: 200,
+        headers: { "content-type": "text/html; charset=utf-8" },
+      });
+    }
+
     // Dynamic sitemap — generated from the static pages + blog post registry
     if (url.pathname === "/sitemap.xml") {
       return new Response(buildSitemap(), {
