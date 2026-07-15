@@ -9,8 +9,11 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TransferAstanaPetropavlovskRouteImport } from './routes/transfer-astana-petropavlovsk'
+import { Route as TransferAstanaPavlodarRouteImport } from './routes/transfer-astana-pavlodar'
 import { Route as TransferAstanaOmskRouteImport } from './routes/transfer-astana-omsk'
 import { Route as TransferAstanaMagnitogorskRouteImport } from './routes/transfer-astana-magnitogorsk'
+import { Route as TransferAstanaKostanayRouteImport } from './routes/transfer-astana-kostanay'
 import { Route as TransferAstanaKokshetauRouteImport } from './routes/transfer-astana-kokshetau'
 import { Route as TransferAstanaKaragandaRouteImport } from './routes/transfer-astana-karaganda'
 import { Route as TransferAstanaChelyabinskRouteImport } from './routes/transfer-astana-chelyabinsk'
@@ -39,6 +42,17 @@ import { Route as EnBlogIndexRouteImport } from './routes/en/blog/index'
 import { Route as KzBlogSlugRouteImport } from './routes/kz/blog/$slug'
 import { Route as EnBlogSlugRouteImport } from './routes/en/blog/$slug'
 
+const TransferAstanaPetropavlovskRoute =
+  TransferAstanaPetropavlovskRouteImport.update({
+    id: '/transfer-astana-petropavlovsk',
+    path: '/transfer-astana-petropavlovsk',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const TransferAstanaPavlodarRoute = TransferAstanaPavlodarRouteImport.update({
+  id: '/transfer-astana-pavlodar',
+  path: '/transfer-astana-pavlodar',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TransferAstanaOmskRoute = TransferAstanaOmskRouteImport.update({
   id: '/transfer-astana-omsk',
   path: '/transfer-astana-omsk',
@@ -50,6 +64,11 @@ const TransferAstanaMagnitogorskRoute =
     path: '/transfer-astana-magnitogorsk',
     getParentRoute: () => rootRouteImport,
   } as any)
+const TransferAstanaKostanayRoute = TransferAstanaKostanayRouteImport.update({
+  id: '/transfer-astana-kostanay',
+  path: '/transfer-astana-kostanay',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TransferAstanaKokshetauRoute = TransferAstanaKokshetauRouteImport.update({
   id: '/transfer-astana-kokshetau',
   path: '/transfer-astana-kokshetau',
@@ -199,8 +218,11 @@ export interface FileRoutesByFullPath {
   '/transfer-astana-chelyabinsk': typeof TransferAstanaChelyabinskRoute
   '/transfer-astana-karaganda': typeof TransferAstanaKaragandaRoute
   '/transfer-astana-kokshetau': typeof TransferAstanaKokshetauRoute
+  '/transfer-astana-kostanay': typeof TransferAstanaKostanayRoute
   '/transfer-astana-magnitogorsk': typeof TransferAstanaMagnitogorskRoute
   '/transfer-astana-omsk': typeof TransferAstanaOmskRoute
+  '/transfer-astana-pavlodar': typeof TransferAstanaPavlodarRoute
+  '/transfer-astana-petropavlovsk': typeof TransferAstanaPetropavlovskRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/en/airport': typeof EnAirportRoute
   '/en/contact': typeof EnContactRoute
@@ -230,8 +252,11 @@ export interface FileRoutesByTo {
   '/transfer-astana-chelyabinsk': typeof TransferAstanaChelyabinskRoute
   '/transfer-astana-karaganda': typeof TransferAstanaKaragandaRoute
   '/transfer-astana-kokshetau': typeof TransferAstanaKokshetauRoute
+  '/transfer-astana-kostanay': typeof TransferAstanaKostanayRoute
   '/transfer-astana-magnitogorsk': typeof TransferAstanaMagnitogorskRoute
   '/transfer-astana-omsk': typeof TransferAstanaOmskRoute
+  '/transfer-astana-pavlodar': typeof TransferAstanaPavlodarRoute
+  '/transfer-astana-petropavlovsk': typeof TransferAstanaPetropavlovskRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/en/airport': typeof EnAirportRoute
   '/en/contact': typeof EnContactRoute
@@ -262,8 +287,11 @@ export interface FileRoutesById {
   '/transfer-astana-chelyabinsk': typeof TransferAstanaChelyabinskRoute
   '/transfer-astana-karaganda': typeof TransferAstanaKaragandaRoute
   '/transfer-astana-kokshetau': typeof TransferAstanaKokshetauRoute
+  '/transfer-astana-kostanay': typeof TransferAstanaKostanayRoute
   '/transfer-astana-magnitogorsk': typeof TransferAstanaMagnitogorskRoute
   '/transfer-astana-omsk': typeof TransferAstanaOmskRoute
+  '/transfer-astana-pavlodar': typeof TransferAstanaPavlodarRoute
+  '/transfer-astana-petropavlovsk': typeof TransferAstanaPetropavlovskRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/en/airport': typeof EnAirportRoute
   '/en/contact': typeof EnContactRoute
@@ -295,8 +323,11 @@ export interface FileRouteTypes {
     | '/transfer-astana-chelyabinsk'
     | '/transfer-astana-karaganda'
     | '/transfer-astana-kokshetau'
+    | '/transfer-astana-kostanay'
     | '/transfer-astana-magnitogorsk'
     | '/transfer-astana-omsk'
+    | '/transfer-astana-pavlodar'
+    | '/transfer-astana-petropavlovsk'
     | '/blog/$slug'
     | '/en/airport'
     | '/en/contact'
@@ -326,8 +357,11 @@ export interface FileRouteTypes {
     | '/transfer-astana-chelyabinsk'
     | '/transfer-astana-karaganda'
     | '/transfer-astana-kokshetau'
+    | '/transfer-astana-kostanay'
     | '/transfer-astana-magnitogorsk'
     | '/transfer-astana-omsk'
+    | '/transfer-astana-pavlodar'
+    | '/transfer-astana-petropavlovsk'
     | '/blog/$slug'
     | '/en/airport'
     | '/en/contact'
@@ -357,8 +391,11 @@ export interface FileRouteTypes {
     | '/transfer-astana-chelyabinsk'
     | '/transfer-astana-karaganda'
     | '/transfer-astana-kokshetau'
+    | '/transfer-astana-kostanay'
     | '/transfer-astana-magnitogorsk'
     | '/transfer-astana-omsk'
+    | '/transfer-astana-pavlodar'
+    | '/transfer-astana-petropavlovsk'
     | '/blog/$slug'
     | '/en/airport'
     | '/en/contact'
@@ -389,8 +426,11 @@ export interface RootRouteChildren {
   TransferAstanaChelyabinskRoute: typeof TransferAstanaChelyabinskRoute
   TransferAstanaKaragandaRoute: typeof TransferAstanaKaragandaRoute
   TransferAstanaKokshetauRoute: typeof TransferAstanaKokshetauRoute
+  TransferAstanaKostanayRoute: typeof TransferAstanaKostanayRoute
   TransferAstanaMagnitogorskRoute: typeof TransferAstanaMagnitogorskRoute
   TransferAstanaOmskRoute: typeof TransferAstanaOmskRoute
+  TransferAstanaPavlodarRoute: typeof TransferAstanaPavlodarRoute
+  TransferAstanaPetropavlovskRoute: typeof TransferAstanaPetropavlovskRoute
   BlogSlugRoute: typeof BlogSlugRoute
   EnAirportRoute: typeof EnAirportRoute
   EnContactRoute: typeof EnContactRoute
@@ -411,6 +451,20 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/transfer-astana-petropavlovsk': {
+      id: '/transfer-astana-petropavlovsk'
+      path: '/transfer-astana-petropavlovsk'
+      fullPath: '/transfer-astana-petropavlovsk'
+      preLoaderRoute: typeof TransferAstanaPetropavlovskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/transfer-astana-pavlodar': {
+      id: '/transfer-astana-pavlodar'
+      path: '/transfer-astana-pavlodar'
+      fullPath: '/transfer-astana-pavlodar'
+      preLoaderRoute: typeof TransferAstanaPavlodarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/transfer-astana-omsk': {
       id: '/transfer-astana-omsk'
       path: '/transfer-astana-omsk'
@@ -423,6 +477,13 @@ declare module '@tanstack/react-router' {
       path: '/transfer-astana-magnitogorsk'
       fullPath: '/transfer-astana-magnitogorsk'
       preLoaderRoute: typeof TransferAstanaMagnitogorskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/transfer-astana-kostanay': {
+      id: '/transfer-astana-kostanay'
+      path: '/transfer-astana-kostanay'
+      fullPath: '/transfer-astana-kostanay'
+      preLoaderRoute: typeof TransferAstanaKostanayRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/transfer-astana-kokshetau': {
@@ -629,8 +690,11 @@ const rootRouteChildren: RootRouteChildren = {
   TransferAstanaChelyabinskRoute: TransferAstanaChelyabinskRoute,
   TransferAstanaKaragandaRoute: TransferAstanaKaragandaRoute,
   TransferAstanaKokshetauRoute: TransferAstanaKokshetauRoute,
+  TransferAstanaKostanayRoute: TransferAstanaKostanayRoute,
   TransferAstanaMagnitogorskRoute: TransferAstanaMagnitogorskRoute,
   TransferAstanaOmskRoute: TransferAstanaOmskRoute,
+  TransferAstanaPavlodarRoute: TransferAstanaPavlodarRoute,
+  TransferAstanaPetropavlovskRoute: TransferAstanaPetropavlovskRoute,
   BlogSlugRoute: BlogSlugRoute,
   EnAirportRoute: EnAirportRoute,
   EnContactRoute: EnContactRoute,

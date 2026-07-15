@@ -11,6 +11,10 @@ import { transferAstanaKaraganda } from "@/content/blog/transfer-astana-karagand
 import { transferAstanaKokshetau } from "@/content/blog/transfer-astana-kokshetau";
 import { arendaNaPolnyyDen } from "@/content/blog/arenda-na-polnyy-den";
 import { hyundaiStariaLuxeObzorSalona } from "@/content/blog/hyundai-staria-luxe-obzor-salona";
+import { indriverAstanaBorovoe } from "@/content/blog/indriver-astana-borovoe";
+import { detskoeKresloTransferAstana } from "@/content/blog/detskoe-kreslo-transfer-astana";
+import { nochnoyTransferVAstane } from "@/content/blog/nochnoy-transfer-v-astane";
+import { transferNaKonferentsiiAstana } from "@/content/blog/transfer-na-konferentsii-astana";
 
 // Блоки контента статьи — рендерятся в семантический HTML (h2/h3/p/ul/...).
 export type Block =
@@ -66,6 +70,10 @@ export const POSTS: Post[] = [
   transferAstanaKokshetau,
   arendaNaPolnyyDen,
   hyundaiStariaLuxeObzorSalona,
+  indriverAstanaBorovoe,
+  detskoeKresloTransferAstana,
+  nochnoyTransferVAstane,
+  transferNaKonferentsiiAstana,
 ];
 
 export function allPosts(): Post[] {

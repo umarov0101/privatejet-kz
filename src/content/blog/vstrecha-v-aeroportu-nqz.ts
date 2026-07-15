@@ -12,7 +12,7 @@ export const vstrechaAeroportNqz: Post = {
   related: [
     "cena-transfera-aeroport-nqz",
     "vstrecha-delegaciy-korporativnyy-transfer",
-    "tur-po-astane-s-voditelem",
+    "nochnoy-transfer-v-astane",
   ],
   service: "airport",
   t: {

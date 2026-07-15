@@ -11,7 +11,7 @@ export const vstrechaDelegaciyKorporativnyyTransfer: Post = {
   minutes: 6,
   related: [
     "vstrecha-v-aeroportu-nqz",
-    "hyundai-staria-luxe-obzor-salona",
+    "transfer-na-konferentsii-astana",
     "svadebnyy-kortezh-astana",
   ],
   service: "services",

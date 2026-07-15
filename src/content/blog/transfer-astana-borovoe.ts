@@ -9,7 +9,7 @@ export const transferAstanaBorovoe: Post = {
   imageWidth: 1536,
   imageHeight: 1024,
   minutes: 6,
-  related: ["transfer-astana-kokshetau", "transfer-astana-karaganda", "tur-po-astane-s-voditelem"],
+  related: ["transfer-astana-kokshetau", "transfer-astana-karaganda", "indriver-astana-borovoe"],
   service: "services",
   directionSlug: "transfer-astana-borovoe",
   t: {

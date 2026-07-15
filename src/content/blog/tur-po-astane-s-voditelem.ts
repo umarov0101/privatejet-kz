@@ -9,7 +9,11 @@ export const turPoAstaneSVoditelem: Post = {
   imageWidth: 1400,
   imageHeight: 933,
   minutes: 5,
-  related: ["pochasovaya-arenda-minivena", "arenda-na-polnyy-den", "vstrecha-v-aeroportu-nqz"],
+  related: [
+    "pochasovaya-arenda-minivena",
+    "arenda-na-polnyy-den",
+    "detskoe-kreslo-transfer-astana",
+  ],
   service: "services",
   t: {
     ru: {
